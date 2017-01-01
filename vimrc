@@ -131,9 +131,9 @@ set number              " show line numbers
 set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
-if &t_Co >= 256 || has("gui_running")
-    set cursorcolumn    " cursor column is fine but only with enough colors
-endif
+"if &t_Co >= 256 || has("gui_running")
+"    set cursorcolumn    " cursor column is fine but only with enough colors
+"endif
 
 " =====================
 " 6. MAPS AND FUNCTIONS
