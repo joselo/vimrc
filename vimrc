@@ -25,7 +25,7 @@ set history=1000 " increase history size
 " =================
 " 2. VIM-PLUG PLUGINS
 " =================
-call_plug#begin('~/.vim/plugged/')
+call plug#begin('~/.vim/plugged/')
 
 
 " Plug-ins
