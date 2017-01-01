@@ -51,8 +51,8 @@ call plug#begin('~/.vim/plugged/')
 "Plug 'racer-rust/vim-racer'
 
 " Colorschemes
-Plug 'cschlueter/vim-wombat'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'cschlueter/vim-wombat'
+"Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -103,10 +103,10 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Extra fancyness if full pallete is supported.
-if &t_Co >= 256 || has("gui_running")
-    set cursorline
-    set cursorcolumn
-endif
+"if &t_Co >= 256 || has("gui_running")
+"    set cursorline
+"    set cursorcolumn
+"endif
 
 " Trailing spaces
 if &t_Co > 2 || has("gui_running")
