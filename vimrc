@@ -52,7 +52,7 @@ call plug#begin('~/.vim/plugged/')
 
 " Colorschemes
 "Plug 'cschlueter/vim-wombat'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -99,7 +99,10 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
-   silent! color wombat
+   "silent! color wombat
+   set background=dark
+   "colorscheme solarized
+   silent! color solarized
 endif
 
 " Extra fancyness if full pallete is supported.
