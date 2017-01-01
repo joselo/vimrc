@@ -101,8 +101,8 @@ if &t_Co > 2 || has("gui_running")
    set colorcolumn=80
    "silent! color wombat
    set background=dark
-   "colorscheme solarized
-   silent! color solarized
+   colorscheme solarized
+   "silent! color solarized
 endif
 
 " Extra fancyness if full pallete is supported.
