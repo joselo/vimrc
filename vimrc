@@ -35,7 +35,7 @@ call plug#begin('~/.vim/plugged/')
 "Plug 'ap/vim-buftabline'
 "Plug 'mattn/emmet-vim'
 "Plug 'editorconfig/editorconfig-vim'
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " YouCompleteMe is overkill to install unless I actually need it. Uncomment
 " if C/C++/Rust is planned to be developer on the machine vimrc is running in.
