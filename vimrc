@@ -45,8 +45,8 @@ call plug#begin('~/.vim/plugged/')
 "Plug 'wlangstroth/vim-racket'
 "Plug 'tfnico/vim-gradle'
 "Plug 'tpope/vim-rails'
-"Plug 'tpope/vim-endwise'
-"Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-endwise'
+Plug 'alvan/vim-closetag'
 "Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
 
