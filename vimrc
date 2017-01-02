@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged/')
 " Plug-ins
 "Plug 'tpope/vim-fugitive'
 "Plug 'airblade/vim-gitgutter'
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'ap/vim-buftabline'
 "Plug 'mattn/emmet-vim'
 "Plug 'editorconfig/editorconfig-vim'
