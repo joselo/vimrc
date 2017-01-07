@@ -100,7 +100,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
-   "silent! color wombat
+   silent! color wombat
 endif
 
 " Extra fancyness if full pallete is supported.
