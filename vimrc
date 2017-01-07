@@ -36,7 +36,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'mattn/emmet-vim'
 "Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
-"Plug 'herrbischoff/cobalt2'
 
 " YouCompleteMe is overkill to install unless I actually need it. Uncomment
 " if C/C++/Rust is planned to be developer on the machine vimrc is running in.
@@ -54,6 +53,7 @@ Plug 'alvan/vim-closetag'
 " Colorschemes
 "Plug 'cschlueter/vim-wombat'
 "Plug 'altercation/vim-colors-solarized'
+"Plug 'herrbischoff/cobalt2'
 
 call plug#end()
 
