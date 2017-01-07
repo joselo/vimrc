@@ -51,7 +51,7 @@ Plug 'alvan/vim-closetag'
 "Plug 'racer-rust/vim-racer'
 
 " Colorschemes
-"Plug 'cschlueter/vim-wombat'
+Plug 'cschlueter/vim-wombat'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'herrbischoff/cobalt2'
 
