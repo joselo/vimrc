@@ -36,7 +36,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'mattn/emmet-vim'
 "Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'herrbischoff/cobalt2'
+"Plug 'herrbischoff/cobalt2'
 
 " YouCompleteMe is overkill to install unless I actually need it. Uncomment
 " if C/C++/Rust is planned to be developer on the machine vimrc is running in.
@@ -101,7 +101,6 @@ if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
    "silent! color wombat
-   colorscheme cobalt2
 endif
 
 " Extra fancyness if full pallete is supported.
