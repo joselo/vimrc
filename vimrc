@@ -52,8 +52,8 @@ Plug 'alvan/vim-closetag'
 
 " Colorschemes
 Plug 'cschlueter/vim-wombat'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'herrbischoff/cobalt2'
+Plug 'altercation/vim-colors-solarized'
+Plug 'herrbischoff/cobalt2'
 
 call plug#end()
 
