@@ -55,6 +55,9 @@ Plug 'cschlueter/vim-wombat'
 Plug 'altercation/vim-colors-solarized'
 Plug 'herrbischoff/cobalt2'
 
+" Powerline
+Plug 'vim-airline/vim-airline'
+
 call plug#end()
 
 " ================
