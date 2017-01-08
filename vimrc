@@ -54,6 +54,7 @@ Plug 'alvan/vim-closetag'
 Plug 'cschlueter/vim-wombat'
 Plug 'altercation/vim-colors-solarized'
 Plug 'herrbischoff/cobalt2'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -104,7 +105,9 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
-   silent! color wombat
+   "silent! color wombat
+   set background=dark
+   colorscheme PaperColor
 endif
 
 " Extra fancyness if full pallete is supported.
