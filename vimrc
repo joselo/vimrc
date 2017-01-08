@@ -159,6 +159,16 @@ map <C-l> <C-w>l
 
 " Move CtrlP to CtrlT (CtrlP is for buffers)
 let g:ctrlp_map = '<C-t>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+
 
 " Working with buffers is cool.
 set hidden
