@@ -140,6 +140,8 @@ set showmatch           " higlight matching parentheses and brackets
 "    set cursorcolumn    " cursor column is fine but only with enough colors
 "endif
 
+let g:airline_powerline_fonts = 1 " Powerline and powerfonts are required
+
 " =====================
 " 6. MAPS AND FUNCTIONS
 " =====================
