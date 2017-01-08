@@ -141,7 +141,7 @@ set showmatch           " higlight matching parentheses and brackets
 "endif
 
 let g:airline_powerline_fonts = 1 " Powerline and powerfonts are required
-set AirlineTheme=powerlineih "Powerine Airline Theme
+let AirlineTheme=powerlineih "Powerine Airline Theme
 
 " =====================
 " 6. MAPS AND FUNCTIONS
