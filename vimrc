@@ -37,6 +37,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'Valloric/YouCompleteMe'
 
 " YouCompleteMe is overkill to install unless I actually need it. Uncomment
 " if C/C++/Rust is planned to be developer on the machine vimrc is running in.
