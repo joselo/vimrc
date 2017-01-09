@@ -61,6 +61,10 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Tmux Vim-airline theme
+Plug 'edkolev/tmuxline.vim'
+
+
 call plug#end()
 
 " ================
