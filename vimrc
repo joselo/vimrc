@@ -37,11 +37,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'Valloric/YouCompleteMe'
-
-" YouCompleteMe is overkill to install unless I actually need it. Uncomment
-" if C/C++/Rust is planned to be developer on the machine vimrc is running in.
-" Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Language support
 "Plug 'wlangstroth/vim-racket'
@@ -192,3 +189,17 @@ imap <F5> <ESC>:set invrelativenumber<CR>a
 map <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=20
+
+" =====================
+" 7. Snippets settings
+"  ===================
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
