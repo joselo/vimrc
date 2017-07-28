@@ -31,7 +31,7 @@ Plug 'honza/vim-snippets'
 Plug 'alvan/vim-closetag'
 
 " Colorschemes
-Plug 'jdkanani/vim-material-theme'
+"Plug 'jdkanani/vim-material-theme'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -87,7 +87,7 @@ if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
    set background=dark
-   colorscheme material-theme
+   "colorscheme material-theme
 endif
 
 " Extra fancyness if full pallete is supported.
