@@ -86,7 +86,8 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   set colorcolumn=80
+   "set colorcolumn=80
+   highlight ColorColumn ctermbg=7
    set background=dark
    colorscheme base16-default-dark
 endif
