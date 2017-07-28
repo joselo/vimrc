@@ -14,8 +14,8 @@ if ! curl --version >/dev/null 2>&1; then
 fi
 
 # Backup old setup (-f for overwriting old backups).
-[ -e ~/.vimrc ] && (rm -rf ~/.vimrc.bak; mv ~/.vimrc ~/.vimrc.bak)
-[ -e ~/.vim ] && (rm -rf ~/.vim.bak; mv ~/.vim ~/.vim.bak)
+#[ -e ~/.vimrc ] && (rm -rf ~/.vimrc.bak; mv ~/.vimrc ~/.vimrc.bak)
+#[ -e ~/.vim ] && (rm -rf ~/.vim.bak; mv ~/.vim ~/.vim.bak)
 
 # Clone and install configuration.
 git clone https://github.com/joselo/vimrc ~/.vim
