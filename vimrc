@@ -33,6 +33,7 @@ Plug 'alvan/vim-closetag'
 " Colorschemes
 "Plug 'jdkanani/vim-material-theme'
 Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -112,7 +113,7 @@ endif
 set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
                         " Sauce on this: http://stackoverflow.com/a/9001540
 
-set showmode            " always show which more are we in
+"set showmode            " always show which more are we in
 set laststatus=2        " always show statusbar
 set wildmenu            " enable visual wildmenu
 
