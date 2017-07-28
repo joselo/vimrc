@@ -174,4 +174,7 @@ if &term =~ '256color'
 
   "To Easy copy to clipboard
   set clipboard=unnamed
-endif"
+
+  "Disable sound error
+  set visualbell
+endif
