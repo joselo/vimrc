@@ -171,4 +171,7 @@ if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
   set t_ut=
+
+  "To Easy copy to clipboard
+  set clipboard=unnamed
 endif"
