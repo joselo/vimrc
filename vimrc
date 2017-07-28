@@ -36,7 +36,7 @@ Plug 'chriskempson/base16-vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 " Tmux Vim-airline theme
 "Plug 'edkolev/tmuxline.vim'
@@ -86,7 +86,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   "set colorcolumn=80
+   set colorcolumn=80
    set background=dark
    colorscheme base16-default-dark
 endif
@@ -125,7 +125,7 @@ set showmatch           " higlight matching parentheses and brackets
 "endif
 
 let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
-"let g:airline_theme='powerlineish'   "Powerine Airline Theme
+let g:airline_theme='powerlineish'   "Powerine Airline Theme
 
 " =====================
 " 6. MAPS AND FUNCTIONS
