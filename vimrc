@@ -11,6 +11,7 @@
 " 4. Specific filetype settings
 " 5. Colors and UI
 " 6. Maps and functions
+" 7. Gnome Terminal
 
 " ===================
 " 1. GENERIC SETTINGS
@@ -98,6 +99,7 @@ endif
 if &t_Co >= 256 || has("gui_running")
 "    set cursorline
 "    set cursorcolumn
+    set t_Co=256
 endif
 
 " Trailing spaces
@@ -166,3 +168,13 @@ set hidden
 map <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=20
+
+
+" =====================
+" 7. Gnome Terminal
+" =====================
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  set t_ut=
+endif"
