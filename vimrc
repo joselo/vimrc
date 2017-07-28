@@ -124,10 +124,6 @@ set nowrap              " don't wrap long lines
 "set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
-if &t_Co >= 256 || has("gui_running")
-    set cursorcolumn    " cursor column is fine but only with enough colors
-endif
-
 let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
 let g:airline_theme='jellybeans'   "Powerine Airline Theme
 
