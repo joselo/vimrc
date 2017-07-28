@@ -1,7 +1,3 @@
-" danirod's vimrc settings
-" Author and maintainer: Dani Rodríguez <danirod@outlook.com>
-" Public backup: http://github.com/danirod/vimrc
-"
 " LICENSE:
 " You are free to read and study this bundle or snippets of it and to use
 " it on your own vimrc settings. Feel free to tweak and adapt my vimrc to
@@ -27,40 +23,22 @@ set history=1000 " increase history size
 " =================
 call plug#begin('~/.vim/plugged/')
 
-
 " Plug-ins
-"Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'ap/vim-buftabline'
-"Plug 'mattn/emmet-vim'
-"Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Language support
-"Plug 'wlangstroth/vim-racket'
-"Plug 'tfnico/vim-gradle'
-"Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
 Plug 'alvan/vim-closetag'
-"Plug 'rust-lang/rust.vim'
-"Plug 'racer-rust/vim-racer'
 
 " Colorschemes
-Plug 'cschlueter/vim-wombat'
-Plug 'altercation/vim-colors-solarized'
-Plug 'herrbischoff/cobalt2'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'jdkanani/vim-material-theme'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 
 " Tmux Vim-airline theme
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 
 
 call plug#end()
@@ -108,9 +86,8 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
-   "silent! color wombat
    set background=dark
-   colorscheme PaperColor
+   colorscheme material-theme
 endif
 
 " Extra fancyness if full pallete is supported.
@@ -139,14 +116,14 @@ set wildmenu            " enable visual wildmenu
 
 set nowrap              " don't wrap long lines
 set number              " show line numbers
-set relativenumber      " show numbers as relative by default
+"set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
 "if &t_Co >= 256 || has("gui_running")
 "    set cursorcolumn    " cursor column is fine but only with enough colors
 "endif
 
-let g:airline_powerline_fonts = 1 " Powerline and powerfonts are required
+let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
 let g:airline_theme='powerlineish'   "Powerine Airline Theme
 
 " =====================
@@ -160,9 +137,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Move CtrlP to CtrlT (CtrlP is for buffers)
-let g:ctrlp_map = '<C-t>'
-
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
@@ -171,8 +145,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-
-
 
 " Working with buffers is cool.
 set hidden
@@ -183,23 +155,9 @@ imap <C-P> <Esc>:bprev<CR>a
 
 " Relative numbering is pretty useful for motions (3g, 5k...). However I'd
 " prefer to have a way for switching relative numbers with a single map.
-nmap <F5> :set invrelativenumber<CR>
-imap <F5> <ESC>:set invrelativenumber<CR>a
+"nmap <F5> :set invrelativenumber<CR>
+"imap <F5> <ESC>:set invrelativenumber<CR>a
 
 map <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=20
-
-" =====================
-" 7. Snippets settings
-"  ===================
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
