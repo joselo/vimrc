@@ -86,7 +86,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   set colorcolumn=80
+   "set colorcolumn=80
    set background=dark
    colorscheme base16-default-dark
 endif
@@ -116,7 +116,7 @@ set laststatus=2        " always show statusbar
 set wildmenu            " enable visual wildmenu
 
 set nowrap              " don't wrap long lines
-set number              " show line numbers
+"set number              " show line numbers
 "set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
