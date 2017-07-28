@@ -32,6 +32,7 @@ Plug 'alvan/vim-closetag'
 
 " Colorschemes
 "Plug 'jdkanani/vim-material-theme'
+Plug 'chriskempson/base16-vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -88,6 +89,7 @@ if &t_Co > 2 || has("gui_running")
    set colorcolumn=80
    set background=dark
    "colorscheme material-theme
+   set colorscheme base16-default-dark
 endif
 
 " Extra fancyness if full pallete is supported.
@@ -148,10 +150,10 @@ let g:ctrlp_custom_ignore = {
 
 " Working with buffers is cool.
 set hidden
-map <C-N>  :bnext<CR>
-map <C-P>  :bprev<CR>
-imap <C-N> <Esc>:bnext<CR>a
-imap <C-P> <Esc>:bprev<CR>a
+"map <C-N>  :bnext<CR>
+"map <C-P>  :bprev<CR>
+"imap <C-N> <Esc>:bnext<CR>a
+"imap <C-P> <Esc>:bprev<CR>a
 
 " Relative numbering is pretty useful for motions (3g, 5k...). However I'd
 " prefer to have a way for switching relative numbers with a single map.
