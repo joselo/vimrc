@@ -89,7 +89,7 @@ if &t_Co > 2 || has("gui_running")
    syntax on
    "set colorcolumn=80
    highlight ColorColumn ctermbg=7
-   set background=dark
+   "set background=dark
    "colorscheme base16-default-dark
    colorscheme jellybeans
 endif
