@@ -88,7 +88,7 @@ if &t_Co > 2 || has("gui_running")
    syntax on
    set colorcolumn=80
    set background=dark
-   colorscheme base16-default
+   colorscheme base16-default-dark
 endif
 
 " Extra fancyness if full pallete is supported.
