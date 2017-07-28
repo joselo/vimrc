@@ -99,7 +99,6 @@ endif
 if &t_Co >= 256 || has("gui_running")
 "    set cursorline
 "    set cursorcolumn
-    set t_Co=256
 endif
 
 " Trailing spaces
@@ -116,7 +115,7 @@ endif
 set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
                         " Sauce on this: http://stackoverflow.com/a/9001540
 
-"set showmode            " always show which more are we in
+set showmode            " always show which more are we in
 set laststatus=2        " always show statusbar
 set wildmenu            " enable visual wildmenu
 
@@ -125,12 +124,11 @@ set nowrap              " don't wrap long lines
 "set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
-"if &t_Co >= 256 || has("gui_running")
-"    set cursorcolumn    " cursor column is fine but only with enough colors
-"endif
+if &t_Co >= 256 || has("gui_running")
+    set cursorcolumn    " cursor column is fine but only with enough colors
+endif
 
 let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
-"let g:airline_theme='powerlineish'   "Powerine Airline Theme
 let g:airline_theme='jellybeans'   "Powerine Airline Theme
 
 " =====================
