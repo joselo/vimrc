@@ -90,7 +90,8 @@ if &t_Co > 2 || has("gui_running")
    "set colorcolumn=80
    highlight ColorColumn ctermbg=7
    set background=dark
-   colorscheme base16-default-dark
+   "colorscheme base16-default-dark
+   colorscheme jellybeans
 endif
 
 " Extra fancyness if full pallete is supported.
