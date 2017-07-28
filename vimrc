@@ -128,7 +128,8 @@ set showmatch           " higlight matching parentheses and brackets
 "endif
 
 let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
-let g:airline_theme='powerlineish'   "Powerine Airline Theme
+"let g:airline_theme='powerlineish'   "Powerine Airline Theme
+let g:airline_theme='jellybeans'   "Powerine Airline Theme
 
 " =====================
 " 6. MAPS AND FUNCTIONS
