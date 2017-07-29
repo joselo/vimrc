@@ -130,7 +130,6 @@ let g:airline_theme='jellybeans'   "Powerine Airline Theme
 " =====================
 " 6. MAPS AND FUNCTIONS
 " =====================
-let mapleader=","
 
 " Make window navigation less painful.
 map <C-h> <C-w>h
@@ -159,7 +158,7 @@ set hidden
 "nmap <F5> :set invrelativenumber<CR>
 "imap <F5> <ESC>:set invrelativenumber<CR>a
 
-map <Leader>nt :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=20
 
