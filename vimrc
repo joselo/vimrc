@@ -27,9 +27,12 @@ call plug#begin('~/.vim/plugged/')
 " Plug-ins
 Plug 'scrooloose/nerdtree'
 Plug 'honza/vim-snippets'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'haya14busa/incsearch.vim'
 
 " Language support
 Plug 'alvan/vim-closetag'
+Plug 'posva/vim-vue'
 
 " Colorschemes
 "Plug 'jdkanani/vim-material-theme'
@@ -75,6 +78,7 @@ autocmd FileType html,css,sass,scss,javascript setlocal sw=2 sts=2
 autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
+autocmd FileType vue setlocal sw=2 sts=2
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 
@@ -141,7 +145,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](.git|.hg|.svn|bower_components|build)$',
+  \ 'dir':  '\v[\/](.git|.hg|.svn|bower_components|build|node_modules|tmp|log)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
@@ -162,6 +166,11 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=20
 
+
+"IncSearch Plugin
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " =====================
 " 7. Gnome Terminal
