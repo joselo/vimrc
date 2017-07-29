@@ -29,6 +29,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'honza/vim-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/incsearch.vim'
+Plug 'mattn/emmet-vim'
 
 " Language support
 Plug 'alvan/vim-closetag'
@@ -134,6 +135,7 @@ let g:airline_theme='jellybeans'   "Powerine Airline Theme
 " =====================
 " 6. MAPS AND FUNCTIONS
 " =====================
+let mapleader=","
 
 " Make window navigation less painful.
 map <C-h> <C-w>h
@@ -144,6 +146,7 @@ map <C-l> <C-w>l
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
+" CtrlP Config
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](.git|.hg|.svn|bower_components|build|node_modules|tmp|log)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -157,6 +160,9 @@ set hidden
 "imap <C-N> <Esc>:bnext<CR>a
 "imap <C-P> <Esc>:bprev<CR>a
 
+" Edit files in the same buffer directory
+cabbr %% <C-R>=expand('%:p:h')<CR>
+
 " Relative numbering is pretty useful for motions (3g, 5k...). However I'd
 " prefer to have a way for switching relative numbers with a single map.
 "nmap <F5> :set invrelativenumber<CR>
@@ -164,13 +170,16 @@ set hidden
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
-let NERDTreeWinSize=20
+let NERDTreeWinSize=40
 
 
 "IncSearch Plugin
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+"Emmet
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " =====================
 " 7. Gnome Terminal
