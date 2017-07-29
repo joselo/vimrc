@@ -35,7 +35,7 @@ Plug 'jiangmiao/auto-pairs'    " Auto close matching pairs {} \"\", etc..
 Plug 'valloric/matchtagalways' " highlight open and close tabs
 Plug 'tpope/vim-obsession'     " save vim sessions
 Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow deleting them
-
+Plug 'mhinz/vim-startify'      " fancy vim start page
 
 " Language support
 Plug 'alvan/vim-closetag'
@@ -179,6 +179,9 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 "FzF
 " set fzf's default input to AG instead of find. This also removes gitignore etc
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
+map <C-p> :Files<CR>
+map <C-b> :Buffers<CR>
+map <C-f> :BLines<CR>
 
 " =====================
 " 7. Gnome Terminal
