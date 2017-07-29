@@ -25,20 +25,27 @@ set history=1000 " increase history size
 call plug#begin('~/.vim/plugged/')
 
 " Plug-ins
-Plug 'scrooloose/nerdtree'
-Plug 'honza/vim-snippets'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'haya14busa/incsearch.vim'
-Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'  " NERDTree... tree explorer for vim
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf greatness (fuzzy finding)
+Plug 'junegunn/fzf.vim'        " fzf greatness (fuzzy finding)
+Plug 'SirVer/ultisnips'        " modern snippets for vim
+Plug 'honza/vim-snippets'      " vim snippets for UltiSnips ...
+Plug 'tpope/vim-eunuch'        " Vim sugar for the UNIX shell commands that need it the most.
+Plug 'jiangmiao/auto-pairs'    " Auto close matching pairs {} \"\", etc..
+Plug 'valloric/matchtagalways' " highlight open and close tabs
+Plug 'tpope/vim-obsession'     " save vim sessions
+Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow deleting them
+
 
 " Language support
 Plug 'alvan/vim-closetag'
 Plug 'posva/vim-vue'
+Plug 'mattn/emmet-vim'
 
 " Colorschemes
-"Plug 'jdkanani/vim-material-theme'
 Plug 'chriskempson/base16-vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -95,9 +102,10 @@ if &t_Co > 2 || has("gui_running")
    syntax on
    "set colorcolumn=80
    highlight ColorColumn ctermbg=7
-   "set background=dark
+   set background=dark
    "colorscheme base16-default-dark
-   colorscheme jellybeans
+   "colorscheme jellybeans
+   colorscheme gruvbox
 endif
 
 " Extra fancyness if full pallete is supported.
@@ -146,13 +154,6 @@ map <C-l> <C-w>l
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-" CtrlP Config
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](.git|.hg|.svn|bower_components|build|node_modules|tmp|log)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
 " Working with buffers is cool.
 set hidden
 "map <C-N>  :bnext<CR>
@@ -171,12 +172,6 @@ cabbr %% <C-R>=expand('%:p:h')<CR>
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=40
-
-
-"IncSearch Plugin
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 "Emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
