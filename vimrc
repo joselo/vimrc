@@ -20,7 +20,6 @@ set nocompatible " disable vi compatibility mode
 set history=1000 " increase history size
 set shell=/bin/zsh " set shell to zsh
 
-
 " =================
 " 2. VIM-PLUG PLUGINS
 " =================
@@ -38,6 +37,8 @@ Plug 'valloric/matchtagalways' " highlight open and close tabs
 Plug 'tpope/vim-obsession'     " save vim sessions
 Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow deleting them
 Plug 'mhinz/vim-startify'      " fancy vim start page
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }  "Vastly improved Javascript indentation and syntax support
+Plug 'othree/yajs.vim', { 'for': 'javascript' } "Enhanced javascript syntax
 
 " Language support
 Plug 'alvan/vim-closetag'
@@ -185,6 +186,11 @@ map <C-p> :Files<CR>
 map <C-b> :Buffers<CR>
 map <C-f> :BLines<CR>
 map <C-g> :Ag<CR>
+
+"vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 " =====================
 " 7. Gnome Terminal
