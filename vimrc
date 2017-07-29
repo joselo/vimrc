@@ -18,6 +18,8 @@
 " ===================
 set nocompatible " disable vi compatibility mode
 set history=1000 " increase history size
+set shell=/bin/zsh " set shell to zsh
+
 
 " =================
 " 2. VIM-PLUG PLUGINS
@@ -182,6 +184,7 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
 map <C-p> :Files<CR>
 map <C-b> :Buffers<CR>
 map <C-f> :BLines<CR>
+map <C-g> :Ag<CR>
 
 " =====================
 " 7. Gnome Terminal
