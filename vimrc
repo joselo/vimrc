@@ -176,6 +176,10 @@ let NERDTreeWinSize=40
 "Emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+"FzF
+" set fzf's default input to AG instead of find. This also removes gitignore etc
+let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
+
 " =====================
 " 7. Gnome Terminal
 " =====================
