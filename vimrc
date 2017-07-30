@@ -108,8 +108,9 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 if &t_Co > 2 || has("gui_running")
    syntax on
    highlight ColorColumn ctermbg=7
-   set background=dark
-   colorscheme happy_hacking
+   "set background=dark
+   "colorscheme happy_hacking
+   colorscheme PaperColor
 endif
 
 " Trailing spaces
@@ -200,10 +201,15 @@ augroup END
 
 "Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_vue_enabled_makers = ['eslint']
+
 augroup NeomakeOnSave
   autocmd!
   autocmd! BufWritePost * Neomake
 augroup END
+
+"Vue Vim
+autocmd FileType vue syntax sync fromstart
 
 " =====================
 " 7. Gnome Terminal
