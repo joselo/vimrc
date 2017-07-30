@@ -154,6 +154,9 @@ let g:markdown_fenced_languages = [
 let g:airline_powerline_fonts = 1          " Powerline and powerfonts are required
 let g:airline_theme='gruvbox'              "Powerine Airline Theme
 
+"Opening files in the same folder as the current file, in vim
+autocmd BufEnter * cd %:p:h
+
 
 " =====================
 " 6. MAPS AND FUNCTIONS
@@ -187,6 +190,9 @@ vnoremap <S-Tab> <gv
 " Keep selection when indenting/outdenting.
 vnoremap > >gv
 vnoremap < <gv
+
+" change dir to current file's dir
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 
 "NerdTree
