@@ -59,10 +59,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Tmux Vim-airline theme
-"Plug 'edkolev/tmuxline.vim'
-
-
 call plug#end()
 
 " ================
@@ -136,7 +132,7 @@ set nowrap              " don't wrap long lines
 set showmatch           " higlight matching parentheses and brackets
 
 let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
-let g:airline_theme='jellybeans'   "Powerine Airline Theme
+let g:airline_theme='gruvbox'   "Powerine Airline Theme
 
 " =====================
 " 6. MAPS AND FUNCTIONS
