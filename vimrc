@@ -43,6 +43,7 @@ Plug 'sbdchd/neoformat'         " Plugin for formatting code.
 Plug 'neomake/neomake'          " staticly check code and highlight errors (async syntastic replacement)
 Plug 'tpope/vim-fugitive'       " git awesomeness
 Plug 'tpope/vim-commentary'     " Comment out code easily
+Plug 'terryma/vim-multiple-cursors'  " Multiple cursor emulation (a la Sublime Text) using ctrl-n
 
 " Language support
 Plug 'alvan/vim-closetag'
