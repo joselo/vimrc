@@ -173,7 +173,7 @@ cabbr %% <C-R>=expand('%:p:h')<CR>
 "nmap <F5> :set invrelativenumber<CR>
 "imap <F5> <ESC>:set invrelativenumber<CR>a
 
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=40
 
