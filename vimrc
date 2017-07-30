@@ -42,7 +42,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' } "Enhanced javascript syntax
 Plug 'sbdchd/neoformat'         " Plugin for formatting code.
 Plug 'neomake/neomake'          " staticly check code and highlight errors (async syntastic replacement)
 Plug 'tpope/vim-fugitive'       " git awesomeness
-
+Plug 'tpope/vim-commentary'     " Comment out code easily
 
 " Language support
 Plug 'alvan/vim-closetag'
