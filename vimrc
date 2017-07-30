@@ -33,17 +33,18 @@ Plug 'SirVer/ultisnips'        " modern snippets for vim
 Plug 'honza/vim-snippets'      " vim snippets for UltiSnips ...
 Plug 'tpope/vim-eunuch'        " Vim sugar for the UNIX shell commands that need it the most.
 Plug 'jiangmiao/auto-pairs'    " Auto close matching pairs {} \"\", etc..
-Plug 'valloric/matchtagalways' " highlight open and close tabs
+Plug 'valloric/matchtagalways' " highlight open and close html tabs
 Plug 'tpope/vim-obsession'     " save vim sessions
 Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow deleting them
 Plug 'mhinz/vim-startify'      " fancy vim start page
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }  "Vastly improved Javascript indentation and syntax support
-Plug 'othree/yajs.vim', { 'for': 'javascript' } "Enhanced javascript syntax
+Plug 'othree/yajs.vim',         { 'for': 'javascript' } "Enhanced javascript syntax
 Plug 'sbdchd/neoformat'         " Plugin for formatting code.
 Plug 'neomake/neomake'          " staticly check code and highlight errors (async syntastic replacement)
 Plug 'tpope/vim-fugitive'       " git awesomeness
 Plug 'tpope/vim-commentary'     " Comment out code easily
 Plug 'terryma/vim-multiple-cursors'  " Multiple cursor emulation (a la Sublime Text) using ctrl-n
+Plug 'tpope/vim-abolish'        "easily search for, substitute, and abbreviate multiple variants of a word
 
 " Language support
 Plug 'alvan/vim-closetag'
@@ -107,16 +108,9 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   "set colorcolumn=80
    highlight ColorColumn ctermbg=7
    set background=dark
    colorscheme happy_hacking
-endif
-
-" Extra fancyness if full pallete is supported.
-if &t_Co >= 256 || has("gui_running")
-"    set cursorline
-"    set cursorcolumn
 endif
 
 " Trailing spaces
@@ -130,16 +124,15 @@ else
     set list
 endif
 
-set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
+"set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
                         " Sauce on this: http://stackoverflow.com/a/9001540
 
-set showmode            " always show which more are we in
+"set showmode            " always show which more are we in
 set laststatus=2        " always show statusbar
 set wildmenu            " enable visual wildmenu
 
 set nowrap              " don't wrap long lines
 "set number              " show line numbers
-"set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 
 let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
@@ -169,11 +162,7 @@ set hidden
 " Edit files in the same buffer directory
 cabbr %% <C-R>=expand('%:p:h')<CR>
 
-" Relative numbering is pretty useful for motions (3g, 5k...). However I'd
-" prefer to have a way for switching relative numbers with a single map.
-"nmap <F5> :set invrelativenumber<CR>
-"imap <F5> <ESC>:set invrelativenumber<CR>a
-
+"NerdTree
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=40
@@ -189,12 +178,12 @@ map <C-b> :Buffers<CR>
 map <C-f> :BLines<CR>
 map <C-g> :Ag<CR>
 
-"vim-javascript
+"Vim Javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
-"neoformat
+"Neoformat
 let g:neoformat_try_formatprg = 1
 augroup NeoformatAutoFormat
     autocmd!
@@ -206,7 +195,7 @@ augroup NeoformatAutoFormat
     autocmd BufWritePre *.js,*.vue Neoformat
 augroup END
 
-" Neomake
+"Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 augroup NeomakeOnSave
   autocmd!
