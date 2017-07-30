@@ -179,6 +179,16 @@ set hidden
 " Edit files in the same buffer directory
 cabbr %% <C-R>=expand('%:p:h')<CR>
 
+
+" Tab/shift-tab to indent/outdent in visual mode.
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+" Keep selection when indenting/outdenting.
+vnoremap > >gv
+vnoremap < <gv
+
+
 "NerdTree
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
@@ -186,9 +196,8 @@ let NERDTreeWinSize=40
 
 "Emmet
 let g:user_emmet_install_global = 0
-augroup EmmetSettings
-  autocmd! FileType vue imap <tab> <plug>(emmet-expand-abbr)
-augroup END
+autocmd FileType html,css,vue EmmetInstall
+let g:user_emmet_leader_key='<C-e>'
 
 "FzF
 " set fzf's default input to AG instead of find. This also removes gitignore etc
@@ -197,6 +206,15 @@ map <C-p> :Files<CR>
 map <C-b> :Buffers<CR>
 map <C-f> :BLines<CR>
 map <C-g> :Ag<CR>
+map <C-h> :History<CR>
+
+"Fzf Ack + Ag
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use Ag for Ack
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
 
 "Vim Javascript
 let g:javascript_plugin_jsdoc = 1
