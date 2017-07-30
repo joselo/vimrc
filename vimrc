@@ -19,8 +19,8 @@
 set nocompatible " disable vi compatibility mode
 set history=1000 " increase history size
 set shell=/bin/zsh " set shell to zsh
-set expandtab "To insert space characters whenever the tab key is pressed
-set tabstop=2 "To insert 2 spaces for a tab
+set ttyfast           " should make scrolling faster
+set lazyredraw        " should make scrolling faster
 
 " =================
 " 2. VIM-PLUG PLUGINS
@@ -50,7 +50,6 @@ Plug 'tpope/vim-abolish'        "easily search for, substitute, and abbreviate m
 Plug 'airblade/vim-gitgutter'   " Visual git gutter
 
 " Language support
-Plug 'alvan/vim-closetag'
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
 
@@ -75,9 +74,10 @@ set nobackup
 
 " Modify indenting settings
 set autoindent              " autoindent always ON.
-set expandtab               " expand tabs
-set shiftwidth=4            " spaces for autoindenting
-set softtabstop=4           " remove a full pseudo-TAB when i press <BS>
+set expandtab               " To insert space characters whenever the tab key is pressed
+set tabstop=2               " To insert 2 spaces for a tab
+set shiftwidth=2            " Number of spaces to use for each step of (auto)indent.
+set shiftround              " Round indent to multiple of 'shiftwidth'
 
 " Modify some other settings about files
 set encoding=utf-8          " always use unicode (god damnit, windows)
@@ -94,8 +94,7 @@ autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
 autocmd FileType vue setlocal sw=2 sts=2
-
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
+autocmd FileType vue syntax sync fromstart
 
 "let g:racer_cmd="/Users/danirod/.cargo/bin/racer"
 "let $RUST_SRC_PATH="/usr/local/src/rustc/src"
@@ -120,8 +119,8 @@ if &t_Co > 2 || has("gui_running")
     match ExtraWhitespace /\s\+$/
 else
     " Fallback
-    set listchars=trail:~
-    set list
+    set listchars=nbsp:☠,tab:▸␣ " Show symbols for weird characters and tabs
+    set list                    " show all whitespaces as a character
 endif
 
 "set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
@@ -130,16 +129,32 @@ endif
 "set showmode            " always show which more are we in
 set laststatus=2        " always show statusbar
 set wildmenu            " enable visual wildmenu
+set wildmode=list:longest,list:full " configure wildmenu
 
 "set nowrap              " don't wrap long lines
 "set number              " show line numbers
 set showmatch           " higlight matching parentheses and brackets
 
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" highlight fenced code blocks in markdown
+let g:markdown_fenced_languages = [
+      \ 'html',
+      \ 'elm',
+      \ 'vim',
+      \ 'js=javascript',
+      \ 'json',
+      \ 'python',
+      \ 'ruby',
+      \ 'elixir',
+      \ 'sql',
+      \ 'bash=sh'
+      \ ]
+
 let g:airline_powerline_fonts = 1          " Powerline and powerfonts are required
 let g:airline_theme='gruvbox'              "Powerine Airline Theme
-
-set listchars=nbsp:☠,tab:▸␣ " Show symbols for weird characters and tabs
-set list                    " show all whitespaces as a character
 
 
 " =====================
@@ -196,7 +211,8 @@ augroup NeoformatAutoFormat
                                              \--print-width\ 80\
                                              \--single-quote\
                                              \--trailing-comma\ es5
-    autocmd BufWritePre *.js,*.vue Neoformat
+    autocmd BufWritePre *.js, Neoformat
+    autocmd BufWritePre *.css,*.scss Neoformat stylefmt
 augroup END
 
 "Neomake
@@ -208,8 +224,17 @@ augroup NeomakeOnSave
   autocmd! BufWritePost * Neomake
 augroup END
 
-"Vue Vim
-autocmd FileType vue syntax sync fromstart
+"MatchTagAlways
+let g:mta_filetypes = {
+      \ 'jinja': 1,
+      \ 'xhtml': 1,
+      \ 'xml': 1,
+      \ 'html': 1,
+      \ 'django': 1,
+      \ 'javascript.jsx': 1,
+      \ 'eruby': 1,
+      \ }
+
 
 " =====================
 " 7. Gnome Terminal
