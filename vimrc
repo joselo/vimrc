@@ -39,6 +39,10 @@ Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow del
 Plug 'mhinz/vim-startify'      " fancy vim start page
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }  "Vastly improved Javascript indentation and syntax support
 Plug 'othree/yajs.vim', { 'for': 'javascript' } "Enhanced javascript syntax
+Plug 'sbdchd/neoformat'         " Plugin for formatting code.
+Plug 'neomake/neomake'          " staticly check code and highlight errors (async syntastic replacement)
+Plug 'tpope/vim-fugitive'       " git awesomeness
+
 
 " Language support
 Plug 'alvan/vim-closetag'
@@ -47,8 +51,7 @@ Plug 'mattn/emmet-vim'
 
 " Colorschemes
 Plug 'chriskempson/base16-vim'
-Plug 'nanotech/jellybeans.vim'
-Plug 'morhetz/gruvbox'
+Plug 'rafi/awesome-vim-colorschemes'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -106,9 +109,7 @@ if &t_Co > 2 || has("gui_running")
    "set colorcolumn=80
    highlight ColorColumn ctermbg=7
    set background=dark
-   "colorscheme base16-default-dark
-   "colorscheme jellybeans
-   colorscheme gruvbox
+   colorscheme happy_hacking
 endif
 
 " Extra fancyness if full pallete is supported.
@@ -191,6 +192,25 @@ map <C-g> :Ag<CR>
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
+
+"neoformat
+let g:neoformat_try_formatprg = 1
+augroup NeoformatAutoFormat
+    autocmd!
+    autocmd FileType javascript setlocal formatprg=prettier\
+                                             \--stdin\
+                                             \--print-width\ 80\
+                                             \--single-quote\
+                                             \--trailing-comma\ es5
+    autocmd BufWritePre *.js,*.vue Neoformat
+augroup END
+
+" Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+augroup NeomakeOnSave
+  autocmd!
+  autocmd! BufWritePost * Neomake
+augroup END
 
 " =====================
 " 7. Gnome Terminal
