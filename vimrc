@@ -48,6 +48,7 @@ Plug 'tpope/vim-commentary'     " Comment out code easily
 Plug 'terryma/vim-multiple-cursors'  " Multiple cursor emulation (a la Sublime Text) using ctrl-n
 Plug 'tpope/vim-abolish'        "easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'airblade/vim-gitgutter'   " Visual git gutter
+Plug 'alvan/vim-closetag'       "Auto close (X)HTML tags
 
 " Language support
 Plug 'posva/vim-vue'
@@ -142,13 +143,10 @@ set splitright
 " highlight fenced code blocks in markdown
 let g:markdown_fenced_languages = [
       \ 'html',
-      \ 'elm',
       \ 'vim',
       \ 'js=javascript',
       \ 'json',
-      \ 'python',
       \ 'ruby',
-      \ 'elixir',
       \ 'sql',
       \ 'bash=sh'
       \ ]
@@ -187,7 +185,10 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=40
 
 "Emmet
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+let g:user_emmet_install_global = 0
+augroup EmmetSettings
+  autocmd! FileType vue imap <tab> <plug>(emmet-expand-abbr)
+augroup END
 
 "FzF
 " set fzf's default input to AG instead of find. This also removes gitignore etc
@@ -235,6 +236,10 @@ let g:mta_filetypes = {
       \ 'eruby': 1,
       \ }
 
+
+
+"CloseTabs
+let g:closetag_filenames = '*.html,*.vue'
 
 " =====================
 " 7. Gnome Terminal
