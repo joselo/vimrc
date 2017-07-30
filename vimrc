@@ -19,6 +19,8 @@
 set nocompatible " disable vi compatibility mode
 set history=1000 " increase history size
 set shell=/bin/zsh " set shell to zsh
+set expandtab "To insert space characters whenever the tab key is pressed
+set tabstop=2 "To insert 2 spaces for a tab
 
 " =================
 " 2. VIM-PLUG PLUGINS
@@ -45,6 +47,7 @@ Plug 'tpope/vim-fugitive'       " git awesomeness
 Plug 'tpope/vim-commentary'     " Comment out code easily
 Plug 'terryma/vim-multiple-cursors'  " Multiple cursor emulation (a la Sublime Text) using ctrl-n
 Plug 'tpope/vim-abolish'        "easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'airblade/vim-gitgutter'   " Visual git gutter
 
 " Language support
 Plug 'alvan/vim-closetag'
@@ -127,12 +130,16 @@ endif
 set laststatus=2        " always show statusbar
 set wildmenu            " enable visual wildmenu
 
-set nowrap              " don't wrap long lines
+"set nowrap              " don't wrap long lines
 "set number              " show line numbers
 set showmatch           " higlight matching parentheses and brackets
 
-let g:airline_powerline_fonts = 1    " Powerline and powerfonts are required
-let g:airline_theme='gruvbox'   "Powerine Airline Theme
+let g:airline_powerline_fonts = 1          " Powerline and powerfonts are required
+let g:airline_theme='gruvbox'              "Powerine Airline Theme
+
+set listchars=nbsp:☠,tab:▸␣ " Show symbols for weird characters and tabs
+set list                    " show all whitespaces as a character
+
 
 " =====================
 " 6. MAPS AND FUNCTIONS
