@@ -43,7 +43,7 @@ Plug 'tpope/vim-eunuch'         " Vim sugar for the UNIX shell commands that nee
 Plug 'jiangmiao/auto-pairs'     " Auto close matching pairs {} \"\", etc..
 Plug 'valloric/matchtagalways'  " highlight open and close html tabs
 Plug 'tpope/vim-obsession'      " save vim sessions
-Plug 'ntpeters/vim-better-white space' " show trailing white spaces and allow deleting them
+Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow deleting them
 Plug 'mhinz/vim-startify'       " fancy vim start page
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' } "Vastly improved Javascript indentation and syntax support
 Plug 'othree/yajs.vim',         { 'for': 'javascript' } "Enhanced javascript syntax
@@ -55,6 +55,7 @@ Plug 'terryma/vim-multiple-cursors'  " Multiple cursor emulation (a la Sublime T
 Plug 'tpope/vim-abolish'        "easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'airblade/vim-gitgutter'   " Visual git gutter
 Plug 'alvan/vim-closetag'       "Auto close (X)HTML tags
+Plug 'duggiefresh/vim-easydir' "A simple way to create, edit and save files and directories
 
 " Language support
 Plug 'posva/vim-vue'
@@ -273,7 +274,10 @@ set hidden
 "imap <C-P> <Esc>:bprev<CR>a
 
 " Edit files in the same buffer directory
-cabbr %% <C-R>=expand('%:p:h')<CR>
+cnoremap ee edit <c-r>=expand("%:h")<cr>/
+
+" Write files in the same buffer directory
+cnoremap ww write <c-r>=expand("%:h")<cr>/
 
 " Tab/shift-tab to indent/outdent in visual mode.
 vnoremap <Tab> >gv
