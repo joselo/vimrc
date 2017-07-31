@@ -7,39 +7,45 @@
 " TABLE OF CONTENTS:
 " 1. Generic settings
 " 2. Vim-Plug plugins
-" 3. File settings
-" 4. Specific filetype settings
-" 5. Colors and UI
-" 6. Maps and functions
-" 7. Gnome Terminal
+" 3. Configure plugins
+" 4. File settings
+" 5. Specific filetype settings
+" 6. Colors and UI
+" 7. Maps and functions
+" 8. Gnome Terminal
+"
 
 " ===================
 " 1. GENERIC SETTINGS
 " ===================
+
+scriptencoding utf-16      " allow emojis in vimrc
 set nocompatible " disable vi compatibility mode
 set history=1000 " increase history size
 set shell=/bin/zsh " set shell to zsh
 set ttyfast           " should make scrolling faster
 set lazyredraw        " should make scrolling faster
+filetype plugin indent on  " try to recognize filetypes and load rel' plugins
 
-" =================
+
+" ===================
 " 2. VIM-PLUG PLUGINS
-" =================
+" ===================
 call plug#begin('~/.vim/plugged/')
 
 " Plug-ins
-Plug 'scrooloose/nerdtree'  " NERDTree... tree explorer for vim
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf greatness (fuzzy finding)
-Plug 'junegunn/fzf.vim'        " fzf greatness (fuzzy finding)
-Plug 'SirVer/ultisnips'        " modern snippets for vim
-Plug 'honza/vim-snippets'      " vim snippets for UltiSnips ...
-Plug 'tpope/vim-eunuch'        " Vim sugar for the UNIX shell commands that need it the most.
-Plug 'jiangmiao/auto-pairs'    " Auto close matching pairs {} \"\", etc..
-Plug 'valloric/matchtagalways' " highlight open and close html tabs
-Plug 'tpope/vim-obsession'     " save vim sessions
-Plug 'ntpeters/vim-better-whitespace' " show trailing white spaces and allow deleting them
-Plug 'mhinz/vim-startify'      " fancy vim start page
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }  "Vastly improved Javascript indentation and syntax support
+Plug 'scrooloose/nerdtree'      " NERDTree... tree explorer for vim
+Plug 'junegunn/fzf', { 'dir': ' ~/.fzf', 'do': './install --all' } " fzf greatness (fuzzy finding)
+Plug 'junegunn/fzf.vim'         " fzf greatness (fuzzy finding)
+Plug 'SirVer/ultisnips'         " modern snippets for vim
+Plug 'honza/vim-snippets'       " vim snippets for UltiSnips ...
+Plug 'tpope/vim-eunuch'         " Vim sugar for the UNIX shell commands that need it the most.
+Plug 'jiangmiao/auto-pairs'     " Auto close matching pairs {} \"\", etc..
+Plug 'valloric/matchtagalways'  " highlight open and close html tabs
+Plug 'tpope/vim-obsession'      " save vim sessions
+Plug 'ntpeters/vim-better-white space' " show trailing white spaces and allow deleting them
+Plug 'mhinz/vim-startify'       " fancy vim start page
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' } "Vastly improved Javascript indentation and syntax support
 Plug 'othree/yajs.vim',         { 'for': 'javascript' } "Enhanced javascript syntax
 Plug 'sbdchd/neoformat'         " Plugin for formatting code.
 Plug 'neomake/neomake'          " staticly check code and highlight errors (async syntastic replacement)
@@ -57,6 +63,7 @@ Plug 'mattn/emmet-vim'
 " Colorschemes
 Plug 'chriskempson/base16-vim'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'mhinz/vim-janah'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -64,136 +71,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
-" ================
-" 3. FILE SETTINGS
-" ================
 
-" 70s are over and swap files are part of the past.
-" If you need to backup something, use Git, for God's sake.
-set noswapfile
-set nobackup
-
-" Modify indenting settings
-set autoindent              " autoindent always ON.
-set expandtab               " To insert space characters whenever the tab key is pressed
-set tabstop=2               " To insert 2 spaces for a tab
-set shiftwidth=2            " Number of spaces to use for each step of (auto)indent.
-set shiftround              " Round indent to multiple of 'shiftwidth'
-
-" Modify some other settings about files
-set encoding=utf-8          " always use unicode (god damnit, windows)
-set backspace=indent,eol,start " backspace always works on insert mode
-set hidden
-
-" =============================
-" 4. SPECIFIC FILETYPE SETTINGS
-" =============================
-
-" Some programming languages work better when only 2 spaces padding is used.
-autocmd FileType html,css,sass,scss,javascript setlocal sw=2 sts=2
-autocmd FileType json setlocal sw=2 sts=2
-autocmd FileType ruby,eruby setlocal sw=2 sts=2
-autocmd FileType yaml setlocal sw=2 sts=2
-autocmd FileType vue setlocal sw=2 sts=2
-autocmd FileType vue syntax sync fromstart
-
-"let g:racer_cmd="/Users/danirod/.cargo/bin/racer"
-"let $RUST_SRC_PATH="/usr/local/src/rustc/src"
-
-
-" ================
-" 5. COLORS AND UI
-" ================
-" Are we supporting colors?
-if &t_Co > 2 || has("gui_running")
-   syntax on
-   highlight ColorColumn ctermbg=7
-   "set background=dark
-   "colorscheme happy_hacking
-   colorscheme PaperColor
-endif
-
-" Trailing spaces
-if &t_Co > 2 || has("gui_running")
-    " Because we have color, colourize them
-    highlight ExtraWhitespace ctermbg=red guibg=red
-    match ExtraWhitespace /\s\+$/
-else
-    " Fallback
-    set listchars=nbsp:☠,tab:▸␣ " Show symbols for weird characters and tabs
-    set list                    " show all whitespaces as a character
-endif
-
-"set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
-                        " Sauce on this: http://stackoverflow.com/a/9001540
-
-"set showmode            " always show which more are we in
-set laststatus=2        " always show statusbar
-set wildmenu            " enable visual wildmenu
-set wildmode=list:longest,list:full " configure wildmenu
-
-"set nowrap              " don't wrap long lines
-"set number              " show line numbers
-set showmatch           " higlight matching parentheses and brackets
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" highlight fenced code blocks in markdown
-let g:markdown_fenced_languages = [
-      \ 'html',
-      \ 'vim',
-      \ 'js=javascript',
-      \ 'json',
-      \ 'ruby',
-      \ 'sql',
-      \ 'bash=sh'
-      \ ]
-
-let g:airline_powerline_fonts = 1          " Powerline and powerfonts are required
-let g:airline_theme='gruvbox'              "Powerine Airline Theme
-
-"Opening files in the same folder as the current file, in vim
-autocmd BufEnter * cd %:p:h
-
-
-" =====================
-" 6. MAPS AND FUNCTIONS
-" =====================
-let mapleader=","
-
-" Make window navigation less painful.
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-" Working with buffers is cool.
-set hidden
-"map <C-N>  :bnext<CR>
-"map <C-P>  :bprev<CR>
-"imap <C-N> <Esc>:bnext<CR>a
-"imap <C-P> <Esc>:bprev<CR>a
-
-" Edit files in the same buffer directory
-cabbr %% <C-R>=expand('%:p:h')<CR>
-
-
-" Tab/shift-tab to indent/outdent in visual mode.
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-
-" Keep selection when indenting/outdenting.
-vnoremap > >gv
-vnoremap < <gv
-
-" change dir to current file's dir
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-
+" ===================
+" 3. Configure Plugin
+" ===================
 
 "NerdTree
 nnoremap <Leader>nt :NERDTreeToggle<CR>
@@ -260,14 +141,156 @@ let g:mta_filetypes = {
       \ 'eruby': 1,
       \ }
 
-
-
 "CloseTabs
 let g:closetag_filenames = '*.html,*.vue'
 
+
+" ================
+" 4. FILE SETTINGS
+" ================
+
+" 70s are over and swap files are part of the past.
+" If you need to backup something, use Git, for God's sake.
+set noswapfile
+set nobackup
+
+" Modify indenting settings
+set autoindent              " autoindent always ON.
+set expandtab               " To insert space characters whenever the tab key is pressed
+set tabstop=2               " To insert 2 spaces for a tab
+set shiftwidth=2            " Number of spaces to use for each step of (auto)indent.
+set shiftround              " Round indent to multiple of 'shiftwidth'
+
+" Modify some other settings about files
+set encoding=utf-8             " always use unicode (god damnit, windows)
+set backspace=indent,eol,start " backspace always works on insert mode
+
+
+" =============================
+" 5. SPECIFIC FILETYPE SETTINGS
+" =============================
+
+" Some programming languages work better when only 2 spaces padding is used.
+autocmd FileType html,css,sass,scss,javascript setlocal sw=2 sts=2
+autocmd FileType json setlocal sw=2 sts=2
+autocmd FileType ruby,eruby setlocal sw=2 sts=2
+autocmd FileType yaml setlocal sw=2 sts=2
+autocmd FileType vue setlocal sw=2 sts=2
+autocmd FileType vue syntax sync fromstart
+
+"let g:racer_cmd="/Users/danirod/.cargo/bin/racer"
+"let $RUST_SRC_PATH="/usr/local/src/rustc/src"
+
+
+" ================
+" 6. COLORS AND UI
+" ================
+" Are we supporting colors?
+if &t_Co > 2 || has("gui_running")
+   syntax on
+   highlight ColorColumn ctermbg=7
+
+   " Only for gruvbox
+   " set background=dark
+   " colorscheme gruvbox
+   " let g:airline_theme='gruvbox'
+
+   " Only for papercolor
+   " set background=light
+   " let g:airline_theme='papercolor'
+   " colorscheme PaperColor
+
+   " Only for janah theme
+   set background=dark
+   autocmd ColorScheme janah highlight Normal ctermbg=235
+   colorscheme janah
+   let g:airline_theme='minimalist'
+endif
+
+" Trailing spaces
+if &t_Co > 2 || has("gui_running")
+    " Because we have color, colourize them
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
+else
+    " Fallback
+    set listchars=nbsp:☠,tab:▸␣ " Show symbols for weird characters and tabs
+    set list                    " show all whitespaces as a character
+endif
+
+"set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
+                        " Sauce on this: http://stackoverflow.com/a/9001540
+
+set showmode            " always show which more are we in
+set laststatus=2        " always show statusbar
+set wildmenu            " enable visual wildmenu
+set wildmode=list:longest,list:full " configure wildmenu
+
+"set nowrap              " don't wrap long lines
+"set number              " show line numbers
+set showmatch            " higlight matching parentheses and brackets
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" highlight fenced code blocks in markdown
+let g:markdown_fenced_languages = [
+      \ 'html',
+      \ 'vim',
+      \ 'js=javascript',
+      \ 'json',
+      \ 'ruby',
+      \ 'sql',
+      \ 'bash=sh'
+      \ ]
+
+" Powerline and powerfonts are required
+let g:airline_powerline_fonts = 1
+
+" Opening files in the same folder as the current file, in vim
+autocmd BufEnter * cd %:p:h
+
+
 " =====================
-" 7. Gnome Terminal
+" 7. MAPS AND FUNCTIONS
 " =====================
+let mapleader=","
+
+" Make window navigation less painful.
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+" Working with buffers is cool.
+set hidden
+"map <C-N>  :bnext<CR>
+"map <C-P>  :bprev<CR>
+"imap <C-N> <Esc>:bnext<CR>a
+"imap <C-P> <Esc>:bprev<CR>a
+
+" Edit files in the same buffer directory
+cabbr %% <C-R>=expand('%:p:h')<CR>
+
+" Tab/shift-tab to indent/outdent in visual mode.
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+" Keep selection when indenting/outdenting.
+vnoremap > >gv
+vnoremap < <gv
+
+" change dir to current file's dir
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+
+" =================
+" 8. Gnome Terminal
+" =================
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
