@@ -205,6 +205,8 @@ if &t_Co > 2 || has("gui_running")
    autocmd ColorScheme janah highlight Normal ctermbg=235
    colorscheme janah
    let g:airline_theme='minimalist'
+   let g:gitgutter_override_sign_column_highlight = 0
+   highlight SignColumn ctermbg=235
 endif
 
 " Trailing spaces
@@ -248,9 +250,6 @@ let g:markdown_fenced_languages = [
 " Powerline and powerfonts are required
 let g:airline_powerline_fonts = 1
 
-" Opening files in the same folder as the current file, in vim
-autocmd BufEnter * cd %:p:h
-
 
 " =====================
 " 7. MAPS AND FUNCTIONS
@@ -283,9 +282,6 @@ vnoremap <S-Tab> <gv
 " Keep selection when indenting/outdenting.
 vnoremap > >gv
 vnoremap < <gv
-
-" change dir to current file's dir
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 
 " =================
