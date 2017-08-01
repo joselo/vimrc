@@ -54,8 +54,9 @@ Plug 'tpope/vim-commentary'     " Comment out code easily
 Plug 'terryma/vim-multiple-cursors'  " Multiple cursor emulation (a la Sublime Text) using ctrl-n
 Plug 'tpope/vim-abolish'        "easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'airblade/vim-gitgutter'   " Visual git gutter
-Plug 'alvan/vim-closetag'       "Auto close (X)HTML tags
-Plug 'duggiefresh/vim-easydir' "A simple way to create, edit and save files and directories
+Plug 'alvan/vim-closetag'       " Auto close (X)HTML tags
+Plug 'duggiefresh/vim-easydir'  " A simple way to create, edit and save files and directories
+Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are merely players
 
 " Language support
 Plug 'posva/vim-vue'
@@ -197,17 +198,17 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='gruvbox'
 
    " Only for papercolor
-   " set background=light
-   " let g:airline_theme='papercolor'
-   " colorscheme PaperColor
+   set background=light
+   let g:airline_theme='papercolor'
+   colorscheme PaperColor
 
    " Only for janah theme
-   set background=dark
-   autocmd ColorScheme janah highlight Normal ctermbg=235
-   colorscheme janah
-   let g:airline_theme='minimalist'
-   let g:gitgutter_override_sign_column_highlight = 0
-   highlight SignColumn ctermbg=235
+   " set background=dark
+   " autocmd ColorScheme janah highlight Normal ctermbg=235
+   " colorscheme janah
+   " let g:airline_theme='minimalist'
+   " let g:gitgutter_override_sign_column_highlight = 0
+   " highlight SignColumn ctermbg=235
 endif
 
 " Trailing spaces
