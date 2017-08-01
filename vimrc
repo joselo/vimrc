@@ -137,7 +137,7 @@ endfunction
 
 augroup _fzf
   autocmd!
-  autocmd ColorScheme * call <sid>update_fzf_colors()
+  autocmd VimEnter,ColorScheme * call s:update_fzf_colors()
 augroup END
 
 "Vim Javascript
