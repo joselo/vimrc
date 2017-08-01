@@ -105,6 +105,41 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
 endif
 
+"Fzf respect vim colors
+function! s:update_fzf_colors()
+  let rules =
+  \ { 'fg':      [['Normal',       'fg']],
+    \ 'bg':      [['Normal',       'bg']],
+    \ 'hl':      [['Comment',      'fg']],
+    \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
+    \ 'bg+':     [['CursorColumn', 'bg']],
+    \ 'hl+':     [['Statement',    'fg']],
+    \ 'info':    [['PreProc',      'fg']],
+    \ 'prompt':  [['Conditional',  'fg']],
+    \ 'pointer': [['Exception',    'fg']],
+    \ 'marker':  [['Keyword',      'fg']],
+    \ 'spinner': [['Label',        'fg']],
+    \ 'header':  [['Comment',      'fg']] }
+  let cols = []
+  for [name, pairs] in items(rules)
+    for pair in pairs
+      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
+      if !empty(name) && code > 0
+        call add(cols, name.':'.code)
+        break
+      endif
+    endfor
+  endfor
+  let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
+  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
+        \ empty(cols) ? '' : (' --color='.join(cols, ','))
+endfunction
+
+augroup _fzf
+  autocmd!
+  autocmd ColorScheme * call <sid>update_fzf_colors()
+augroup END
+
 "Vim Javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
@@ -192,23 +227,24 @@ if &t_Co > 2 || has("gui_running")
    syntax on
    highlight ColorColumn ctermbg=7
 
-   " Only for gruvbox
+   "- Only for gruvbox
    " set background=dark
    " colorscheme gruvbox
    " let g:airline_theme='gruvbox'
 
-   " Only for papercolor
+   "- Only for papercolor
    set background=light
    let g:airline_theme='papercolor'
    colorscheme PaperColor
 
-   " Only for janah theme
+   "- Only for janah theme
    " set background=dark
    " autocmd ColorScheme janah highlight Normal ctermbg=235
    " colorscheme janah
    " let g:airline_theme='minimalist'
    " let g:gitgutter_override_sign_column_highlight = 0
    " highlight SignColumn ctermbg=235
+
 endif
 
 " Trailing spaces
