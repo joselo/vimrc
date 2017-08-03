@@ -1,6 +1,4 @@
 " LICENSE:
-" You are free to read and study this bundle or snippets of it and to use
-" it on your own vimrc settings. Feel free to tweak and adapt my vimrc to
 " suit your needs and to make the changes yours. Attribution to this vimrc
 " is not required although is thanked.
 
@@ -57,6 +55,9 @@ Plug 'airblade/vim-gitgutter'   " Visual git gutter
 Plug 'alvan/vim-closetag'       " Auto close (X)HTML tags
 Plug 'duggiefresh/vim-easydir'  " A simple way to create, edit and save files and directories
 Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are merely players
+Plug 'othree/javascript-libraries-syntax.vim'    "Syntax for JavaScript libraries
+Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunction/endif/more in vim script, etc
+Plug 'yuttie/comfortable-motion.vim' "Brings physics-based smooth scrolling to the Vim world!
 
 " Language support
 Plug 'posva/vim-vue'
@@ -66,6 +67,7 @@ Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mhinz/vim-janah'
+Plug 'tyrannicaltoucan/vim-quantum'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -182,6 +184,12 @@ let g:mta_filetypes = {
 let g:closetag_filenames = '*.html,*.vue'
 
 
+"Comfortable-motion
+let g:comfortable_motion_no_default_key_mappings = 1
+nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+
+
 " ================
 " 4. FILE SETTINGS
 " ================
@@ -231,6 +239,8 @@ if &t_Co > 2 || has("gui_running")
    " set background=dark
    " colorscheme gruvbox
    " let g:airline_theme='gruvbox'
+   " let g:gitgutter_override_sign_column_highlight = 0
+   " highlight SignColumn ctermbg=235
 
    "- Only for papercolor
    set background=light
@@ -244,6 +254,13 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='minimalist'
    " let g:gitgutter_override_sign_column_highlight = 0
    " highlight SignColumn ctermbg=235
+
+   "- Only for quantum
+   " set background=dark
+   " set termguicolors
+   " colorscheme quantum
+   " let g:quantum_italics=1
+   " let g:airline_theme='quantum'
 
 endif
 
@@ -324,9 +341,15 @@ vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
 
+" copy to system clipboard
+noremap gy "+y
+
+" copy whole file to system clipboard
+nnoremap gY gg"+yG
+
 
 " =================
-" 8. Gnome Terminal
+" 8. Gui Terminal
 " =================
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
@@ -338,4 +361,12 @@ if &term =~ '256color'
 
   "Disable sound error
   set visualbell
+
 endif
+
+" =========================
+" 9. For specific languages
+" =========================
+
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
