@@ -57,7 +57,6 @@ Plug 'duggiefresh/vim-easydir'  " A simple way to create, edit and save files an
 Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are merely players
 Plug 'othree/javascript-libraries-syntax.vim'    "Syntax for JavaScript libraries
 Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunction/endif/more in vim script, etc
-Plug 'yuttie/comfortable-motion.vim' "Brings physics-based smooth scrolling to the Vim world!
 
 " Language support
 Plug 'posva/vim-vue'
@@ -68,6 +67,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mhinz/vim-janah'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'dracula/vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -183,11 +183,21 @@ let g:mta_filetypes = {
 "CloseTabs
 let g:closetag_filenames = '*.html,*.vue'
 
-
-"Comfortable-motion
-let g:comfortable_motion_no_default_key_mappings = 1
-nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
-nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+"Airline
+let g:airline_mode_map = {
+        \ '__' : '      ',
+        \ 'n'  : 'N',
+        \ 'i'  : 'I',
+        \ 'R'  : 'R',
+        \ 'v'  : 'V',
+        \ 'V'  : 'VL',
+        \ '^V' : 'VB',
+        \ 'c'  : 'C',
+        \ 's'  : 'S',
+        \ 'S'  : 'SL',
+        \ '^S' : 'SB',
+        \ 't'  : 'T',
+        \ }
 
 
 " ================
@@ -243,9 +253,9 @@ if &t_Co > 2 || has("gui_running")
    " highlight SignColumn ctermbg=235
 
    "- Only for papercolor
-   set background=light
-   let g:airline_theme='papercolor'
-   colorscheme PaperColor
+   " set background=light
+   " let g:airline_theme='papercolor'
+   " colorscheme PaperColor
 
    "- Only for janah theme
    " set background=dark
@@ -261,6 +271,10 @@ if &t_Co > 2 || has("gui_running")
    " colorscheme quantum
    " let g:quantum_italics=1
    " let g:airline_theme='quantum'
+
+   "- Only for dracula
+   color dracula
+   let g:airline_theme='dracula'
 
 endif
 
