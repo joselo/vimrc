@@ -57,6 +57,9 @@ Plug 'duggiefresh/vim-easydir'  " A simple way to create, edit and save files an
 Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are merely players
 Plug 'othree/javascript-libraries-syntax.vim'    "Syntax for JavaScript libraries
 Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunction/endif/more in vim script, etc
+Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
+Plug 'racer-rust/vim-racer'     "Racer support for Vim
+Plug 'cespare/vim-toml'         "Vim syntax for TOML.
 
 " Language support
 Plug 'posva/vim-vue'
@@ -68,6 +71,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mhinz/vim-janah'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'dracula/vim'
+Plug 'ajh17/Spacegray.vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -233,8 +237,8 @@ autocmd FileType yaml setlocal sw=2 sts=2
 autocmd FileType vue setlocal sw=2 sts=2
 autocmd FileType vue syntax sync fromstart
 
-"let g:racer_cmd="/Users/danirod/.cargo/bin/racer"
-"let $RUST_SRC_PATH="/usr/local/src/rustc/src"
+set hidden
+let g:racer_cmd="~/.cargo/bin/racer"
 
 
 " ================
@@ -266,15 +270,23 @@ if &t_Co > 2 || has("gui_running")
    " highlight SignColumn ctermbg=235
 
    "- Only for quantum
-   " set background=dark
-   " set termguicolors
-   " colorscheme quantum
-   " let g:quantum_italics=1
-   " let g:airline_theme='quantum'
+   set background=dark
+   set termguicolors
+   colorscheme quantum
+   let g:quantum_italics=1
+   let g:airline_theme='quantum'
 
    "- Only for dracula
-   color dracula
-   let g:airline_theme='dracula'
+   " color dracula
+   " set background=dark
+   " let g:airline_theme='dracula'
+   " highlight Normal ctermfg=white ctermbg=233
+
+   "- Only for spacegray
+   " colorscheme spacegray
+   " set background=dark
+   " autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   " let g:airline_theme='hybrid'
 
 endif
 
@@ -298,7 +310,7 @@ set wildmenu            " enable visual wildmenu
 set wildmode=list:longest,list:full " configure wildmenu
 
 "set nowrap              " don't wrap long lines
-"set number              " show line numbers
+set number              " show line numbers
 set showmatch            " higlight matching parentheses and brackets
 
 " Open new split panes to right and bottom, which feels more natural
@@ -333,6 +345,7 @@ map <C-l> <C-w>l
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*\\log\\*,*.log              " Etc.
 
 " Working with buffers is cool.
 set hidden
@@ -342,10 +355,10 @@ set hidden
 "imap <C-P> <Esc>:bprev<CR>a
 
 " Edit files in the same buffer directory
-cnoremap ee edit <c-r>=expand("%:h")<cr>/
+cnoremap e. edit <c-r>=expand("%:h")<cr>/
 
 " Write files in the same buffer directory
-cnoremap ww write <c-r>=expand("%:h")<cr>/
+cnoremap w. write <c-r>=expand("%:h")<cr>/
 
 " Tab/shift-tab to indent/outdent in visual mode.
 vnoremap <Tab> >gv
