@@ -60,6 +60,7 @@ Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunct
 Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
 Plug 'racer-rust/vim-racer'     "Racer support for Vim
 Plug 'cespare/vim-toml'         "Vim syntax for TOML.
+Plug 'lambdalisue/vim-fullscreen' "Full Screen for GVIM with Ctrl+Enter
 
 " Language support
 Plug 'posva/vim-vue'
