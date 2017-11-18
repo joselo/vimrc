@@ -61,6 +61,7 @@ Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
 Plug 'racer-rust/vim-racer'     "Racer support for Vim
 Plug 'cespare/vim-toml'         "Vim syntax for TOML.
 Plug 'lambdalisue/vim-fullscreen' "Full Screen for GVIM with Ctrl+Enter
+Plug 'Yggdroot/indentLine'        "Indention levels with thin vertical lines
 
 " Language support
 Plug 'posva/vim-vue'
@@ -203,6 +204,10 @@ let g:airline_mode_map = {
         \ '^S' : 'SB',
         \ 't'  : 'T',
         \ }
+
+"IndentLine
+let g:indentLine_char = '⎸'
+let g:indentLine_enabled = 1 " Disable with 0
 
 
 " ================
