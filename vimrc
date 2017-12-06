@@ -61,7 +61,7 @@ Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
 Plug 'racer-rust/vim-racer'     "Racer support for Vim
 Plug 'cespare/vim-toml'         "Vim syntax for TOML.
 Plug 'lambdalisue/vim-fullscreen' "Full Screen for GVIM with Ctrl+Enter
-Plug 'Yggdroot/indentLine'        "Indention levels with thin vertical lines
+Plug 'sovetnik/vim-hanami'      "Hanami support plugin
 
 " Language support
 Plug 'posva/vim-vue'
@@ -74,6 +74,7 @@ Plug 'mhinz/vim-janah'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'dracula/vim'
 Plug 'ajh17/Spacegray.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -205,9 +206,8 @@ let g:airline_mode_map = {
         \ 't'  : 'T',
         \ }
 
-"IndentLine
-let g:indentLine_char = '⎸'
-let g:indentLine_enabled = 1 " Disable with 0
+"Vim-hanami
+let g:hanami_open_strategy = 'vsplit'
 
 
 " ================
@@ -252,8 +252,10 @@ let g:racer_cmd="~/.cargo/bin/racer"
 " ================
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
-   syntax on
-   highlight ColorColumn ctermbg=7
+    syntax on
+    highlight ColorColumn ctermbg=7
+
+    set termguicolors
 
    "- Only for gruvbox
    " set background=dark
@@ -276,11 +278,10 @@ if &t_Co > 2 || has("gui_running")
    " highlight SignColumn ctermbg=235
 
    "- Only for quantum
-   set background=dark
-   set termguicolors
-   colorscheme quantum
-   let g:quantum_italics=1
-   let g:airline_theme='quantum'
+   " set background=dark
+   " colorscheme quantum
+   " let g:quantum_italics=1
+   " let g:airline_theme='quantum'
 
    "- Only for dracula
    " color dracula
@@ -289,10 +290,16 @@ if &t_Co > 2 || has("gui_running")
    " highlight Normal ctermfg=white ctermbg=233
 
    "- Only for spacegray
-   " colorscheme spacegray
+   colorscheme spacegray
+   set background=dark
+   autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   let g:airline_theme='hybrid'
+
+   "- Only for Nord
    " set background=dark
-   " autocmd ColorScheme spacegray highlight Normal ctermbg=235
-   " let g:airline_theme='hybrid'
+   " colorscheme nord
+   " let g:nord_italic_comments = 1
+   " let g:airline_theme='nord'
 
 endif
 
