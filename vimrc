@@ -57,15 +57,14 @@ Plug 'duggiefresh/vim-easydir'  " A simple way to create, edit and save files an
 Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are merely players
 Plug 'othree/javascript-libraries-syntax.vim'    "Syntax for JavaScript libraries
 Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunction/endif/more in vim script, etc
-Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
-Plug 'racer-rust/vim-racer'     "Racer support for Vim
-Plug 'cespare/vim-toml'         "Vim syntax for TOML.
-Plug 'lambdalisue/vim-fullscreen' "Full Screen for GVIM with Ctrl+Enter
-Plug 'sovetnik/vim-hanami'      "Hanami support plugin
 
-" Language support
+" Language frameworks support
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
+Plug 'sovetnik/vim-hanami'      "Hanami support plugin
+Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
+Plug 'cespare/vim-toml'         "Vim syntax for TOML.
+Plug 'racer-rust/vim-racer'     "Racer support for Vim
 
 " Colorschemes
 Plug 'chriskempson/base16-vim'
@@ -75,6 +74,7 @@ Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'dracula/vim'
 Plug 'ajh17/Spacegray.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -290,16 +290,22 @@ if &t_Co > 2 || has("gui_running")
    " highlight Normal ctermfg=white ctermbg=233
 
    "- Only for spacegray
-   colorscheme spacegray
-   set background=dark
-   autocmd ColorScheme spacegray highlight Normal ctermbg=235
-   let g:airline_theme='hybrid'
+   " colorscheme spacegray
+   " set background=dark
+   " autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   " let g:airline_theme='hybrid'
 
    "- Only for Nord
    " set background=dark
    " colorscheme nord
    " let g:nord_italic_comments = 1
    " let g:airline_theme='nord'
+
+   "- Only for spacegray
+   colorscheme iceberg
+   set background=dark
+   autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   let g:airline_theme='hybrid'
 
 endif
 
