@@ -158,12 +158,8 @@ let g:javascript_plugin_flow = 1
 let g:neoformat_try_formatprg = 1
 augroup NeoformatAutoFormat
     autocmd!
-    autocmd FileType javascript setlocal formatprg=prettier\
-                                             \--stdin\
-                                             \--print-width\ 80\
-                                             \--single-quote\
-                                             \--trailing-comma\ es5
-    autocmd BufWritePre *.js, Neoformat
+    autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --print-width\ 120\ --parser\ flow\ --single-quote\ --trailing-comma\ es5
+    autocmd BufWritePre *.js Neoformat
     autocmd BufWritePre *.css,*.scss Neoformat stylefmt
 augroup END
 
