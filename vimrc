@@ -65,6 +65,7 @@ Plug 'sovetnik/vim-hanami'      "Hanami support plugin
 Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
 Plug 'cespare/vim-toml'         "Vim syntax for TOML.
 Plug 'racer-rust/vim-racer'     "Racer support for Vim
+Plug 'othree/html5.vim'         "HTML5 omnicomplete and syntax
 
 " Colorschemes
 Plug 'chriskempson/base16-vim'
@@ -75,6 +76,7 @@ Plug 'dracula/vim'
 Plug 'ajh17/Spacegray.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'raphamorim/lucario'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -302,6 +304,12 @@ if &t_Co > 2 || has("gui_running")
    set background=dark
    autocmd ColorScheme spacegray highlight Normal ctermbg=235
    let g:airline_theme='hybrid'
+
+   "- Only for lucario
+   colorscheme lucario
+   set background=dark
+   autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   " let g:airline_theme='hybrid'
 
 endif
 
