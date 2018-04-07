@@ -77,6 +77,7 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'raphamorim/lucario'
+Plug 'AlessandroYorba/Sierra'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -91,7 +92,7 @@ call plug#end()
 
 "NerdTree
 nnoremap <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
+"let NERDTreeQuitOnOpen=1 "Close when open a file
 let NERDTreeWinSize=40
 
 "Emmet
@@ -300,16 +301,19 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='nord'
 
    "- Only for spacegray
-   colorscheme iceberg
-   set background=dark
-   autocmd ColorScheme spacegray highlight Normal ctermbg=235
-   let g:airline_theme='hybrid'
+   " colorscheme iceberg
+   " set background=dark
+   " autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   " let g:airline_theme='hybrid'
 
    "- Only for lucario
-   colorscheme lucario
-   set background=dark
-   autocmd ColorScheme spacegray highlight Normal ctermbg=235
+   " colorscheme lucario
+   " set background=dark
+   " autocmd ColorScheme spacegray highlight Normal ctermbg=235
    " let g:airline_theme='hybrid'
+
+   "- Only Sierra
+   colorscheme sierra
 
 endif
 
