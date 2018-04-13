@@ -313,7 +313,15 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='hybrid'
 
    "- Only Sierra
-   colorscheme sierra
+   " let g:sierra_Twilight = 1
+   " colorscheme sierra
+
+   "- Only deep-space
+   set background=dark
+   set termguicolors
+   colorscheme deep-space
+   let g:airline_theme='deep_space'
+   let g:deepspace_italics=1
 
 endif
 
