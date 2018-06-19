@@ -209,6 +209,12 @@ let g:airline_mode_map = {
 let g:hanami_open_strategy = 'vsplit'
 
 
+"Rust
+set hidden
+let g:racer_cmd="/home/joselo/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+
 " ================
 " 4. FILE SETTINGS
 " ================
@@ -241,11 +247,6 @@ autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
 autocmd FileType vue setlocal sw=2 sts=2
 autocmd FileType vue syntax sync fromstart
-
-" Rust
-set hidden
-let g:racer_cmd="/home/joselo/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 
 
 " ================
