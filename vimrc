@@ -242,8 +242,10 @@ autocmd FileType yaml setlocal sw=2 sts=2
 autocmd FileType vue setlocal sw=2 sts=2
 autocmd FileType vue syntax sync fromstart
 
+" Rust
 set hidden
-let g:racer_cmd="~/.cargo/bin/racer"
+let g:racer_cmd="/home/joselo/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 
 
 " ================
@@ -347,6 +349,8 @@ set wildmode=list:longest,list:full " configure wildmenu
 "set nowrap              " don't wrap long lines
 set number              " show line numbers
 set showmatch            " higlight matching parentheses and brackets
+
+set hlsearch             " Highlight all search pattern matches
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
