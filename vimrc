@@ -57,6 +57,7 @@ Plug 'duggiefresh/vim-easydir'  " A simple way to create, edit and save files an
 Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are merely players
 Plug 'othree/javascript-libraries-syntax.vim'    "Syntax for JavaScript libraries
 Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunction/endif/more in vim script, etc
+Plug 'chrisbra/Colorizer'       " Color hex codes and color names.
 
 " Language frameworks support
 Plug 'posva/vim-vue'
@@ -214,6 +215,8 @@ set hidden
 let g:racer_cmd="/home/joselo/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
+"Color
+let g:colorizer_auto_filetype='css,html'
 
 " ================
 " 4. FILE SETTINGS
@@ -247,6 +250,7 @@ autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
 autocmd FileType vue setlocal sw=2 sts=2
 autocmd FileType vue syntax sync fromstart
+autocmd FileType rust setlocal sw=2 sts=2
 
 
 " ================
