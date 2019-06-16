@@ -35,3 +35,5 @@ else
     echo "  vim +PlugInstall +qall"
 fi
 
+echo "Do not forget to install silversearcher-ag, in ubuntu: sudo apt install silversearcher-ag"
+
