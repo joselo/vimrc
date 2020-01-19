@@ -58,6 +58,9 @@ Plug 'junegunn/limelight.vim'   " All the world's indeed a stage and we are mere
 Plug 'othree/javascript-libraries-syntax.vim'    "Syntax for JavaScript libraries
 Plug 'tpope/vim-endwise'        " endwise.vim: wisely add end, in ruby, endfunction/endif/more in vim script, etc
 Plug 'chrisbra/Colorizer'       " Color hex codes and color names.
+Plug 'OrangeT/vim-csharp'       " Enhancement's to Vim's C-Sharp Functionality
+Plug 'mustache/vim-mustache-handlebars' " Mustache and handlebars mode for vim
+Plug 'elixir-editors/vim-elixir' " Elixir
 
 " Language frameworks support
 Plug 'posva/vim-vue'
@@ -67,6 +70,7 @@ Plug 'rust-lang/rust.vim'       "Vim configuration for Rust.
 Plug 'cespare/vim-toml'         "Vim syntax for TOML.
 Plug 'racer-rust/vim-racer'     "Racer support for Vim
 Plug 'othree/html5.vim'         "HTML5 omnicomplete and syntax
+Plug 'Glench/Vim-Jinja2-Syntax' "An up-to-date jinja2 syntax file.
 
 " Colorschemes
 Plug 'chriskempson/base16-vim'
@@ -79,6 +83,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'raphamorim/lucario'
 Plug 'AlessandroYorba/Sierra'
+Plug 'nanotech/jellybeans.vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -100,6 +105,9 @@ let NERDTreeWinSize=40
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue EmmetInstall
 let g:user_emmet_leader_key='<C-e>'
+
+"Vim-Jinja2-Syntax.
+autocmd BufNewFile,BufRead *.tera set ft=jinja
 
 "FzF
 " set fzf's default input to AG instead of find. This also removes gitignore etc
@@ -293,10 +301,10 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='quantum'
 
    "- Only for dracula
-   color dracula
-   set background=dark
-   let g:airline_theme='dracula'
-   highlight Normal ctermfg=white ctermbg=233
+   " color dracula
+   " set background=dark
+   " let g:airline_theme='dracula'
+   " highlight Normal ctermfg=white ctermbg=233
 
    "- Only for spacegray
    " colorscheme spacegray
@@ -333,6 +341,15 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='deep_space'
    " let g:deepspace_italics=1
 
+   "- Only jellybeans
+    colorscheme jellybeans
+    if has('termguicolors')
+      set termguicolors
+      let g:jellybeans_overrides = {
+      \    'background': { 'ctermbg': 'none', '256ctermbg': 'none', 'guibg': 'none' },
+      \}
+      colorscheme jellybeans
+    endif
 endif
 
 " Trailing spaces
@@ -444,3 +461,4 @@ endif
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
+highlight NonText ctermbg=none
