@@ -84,6 +84,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'raphamorim/lucario'
 Plug 'AlessandroYorba/Sierra'
 Plug 'nanotech/jellybeans.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Powerline
 Plug 'vim-airline/vim-airline'
@@ -341,15 +342,12 @@ if &t_Co > 2 || has("gui_running")
    " let g:airline_theme='deep_space'
    " let g:deepspace_italics=1
 
-   "- Only jellybeans
-    colorscheme jellybeans
-    if has('termguicolors')
-      set termguicolors
-      let g:jellybeans_overrides = {
-      \    'background': { 'ctermbg': 'none', '256ctermbg': 'none', 'guibg': 'none' },
-      \}
-      colorscheme jellybeans
-    endif
+   "- Only Ayu
+    " colorscheme jellybeans
+    "let ayucolor="light"  " for light version of theme
+    "let ayucolor="mirage" " for mirage version of theme
+    let ayucolor="dark"   " for dark version of theme
+    colorscheme ayu
 endif
 
 " Trailing spaces
