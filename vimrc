@@ -61,6 +61,7 @@ Plug 'chrisbra/Colorizer'       " Color hex codes and color names.
 Plug 'OrangeT/vim-csharp'       " Enhancement's to Vim's C-Sharp Functionality
 Plug 'mustache/vim-mustache-handlebars' " Mustache and handlebars mode for vim
 Plug 'elixir-editors/vim-elixir' " Elixir
+Plug 'ryanoasis/vim-devicons' "Icons for vim
 
 " Language frameworks support
 Plug 'posva/vim-vue'
@@ -98,9 +99,13 @@ call plug#end()
 " ===================
 
 "NerdTree
-nnoremap <Leader>nt :NERDTreeToggle<CR>
+" nnoremap <Leader>nt :NERDTreeToggle<CR>
 "let NERDTreeQuitOnOpen=1 "Close when open a file
-let NERDTreeWinSize=40
+let NERDTreeWinSize=30
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeIgnore=['\.vim$', '\~$', '_build$', 'deps$']
+map <C-x> :NERDTreeToggle<CR>
 
 "Emmet
 let g:user_emmet_install_global = 0
@@ -343,11 +348,10 @@ if &t_Co > 2 || has("gui_running")
    " let g:deepspace_italics=1
 
    "- Only Ayu
-    " colorscheme jellybeans
+    colorscheme ayu
     "let ayucolor="light"  " for light version of theme
     "let ayucolor="mirage" " for mirage version of theme
     let ayucolor="dark"   " for dark version of theme
-    colorscheme ayu
 endif
 
 " Trailing spaces
