@@ -104,7 +104,7 @@ call plug#end()
 let NERDTreeWinSize=30
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let NERDTreeIgnore=['\.vim$', '\~$', '_build$', 'deps$']
+let NERDTreeIgnore=['\.vim$', '\~$', '_build$', 'deps$', 'node_modules$', 'vendor$', 'tmp$', 'log$', 'Gemfile.lock$', 'yarn.lock$', 'bin$', 'uploads$']
 map <C-x> :NERDTreeToggle<CR>
 
 "Emmet
@@ -234,6 +234,9 @@ let g:racer_experimental_completer = 1
 
 "Color
 let g:colorizer_auto_filetype='css,html'
+
+"Vimgrep
+set wildignore=*/node_modules/*,*/target/*,*/tmp/*,*/static/*
 
 " ================
 " 4. FILE SETTINGS
