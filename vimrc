@@ -33,7 +33,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-let g:netrw_list_hide= '.*\.swp$,.*\.git,.*\_build$,.*\tmp$'
+let g:netrw_list_hide= '.*\.swp$,.*\.git,.*\_build,.*\tmp'
 
 "PLUG-INS *********************************************************
 
@@ -109,8 +109,9 @@ Plug 'ayu-theme/ayu-vim' " or other package manager
 call plug#end()
 
 "fzf =============================================================
-
+let g:fzf_layout = { 'down': '~50%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
+
 map <C-p> :Files<CR>
 map <C-b> :Buffers<CR>
 map <C-f> :BLines<CR>
@@ -154,15 +155,24 @@ let g:indentLine_setColors = 0
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'ayu_dark',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
+      \   'gitbranch': 'FugitiveHead', 'filename': 'LightlineFilename'
       \ },
       \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 "## Themes ##
 
