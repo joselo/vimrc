@@ -1,8 +1,7 @@
-syntax on                      "Enable Colors 
+syntax on                      "Enable Colors
 filetype plugin indent on      "Try to recognize filetypes and load rel' plugins
 
 set number                     "Line Numbers
-set nobackup                   "No Backup
 set encoding=utf-8             "Always use unicode (god damnit, windows)
 set nocompatible               "Disable vi compatibility mode
 set autoindent                 "Autoindent always ON.
@@ -11,6 +10,11 @@ set hlsearch                   "Highlight all search pattern matches
 set laststatus=2               "Always show statusbar
 set showmode                   "Always show which more are we in
 set termguicolors              "Enable true colors support
+set colorcolumn=120             "Ruler at a specific column
+
+"No Backup
+set noswapfile
+set nobackup
 
 "Expand tabs to spaces
 set tabstop=2
@@ -53,7 +57,7 @@ Plug 'duggiefresh/vim-easydir'
 "vim-eunuch
 "Vim sugar for the UNIX shell commands that need it the most.
 "https://github.com/tpope/vim-eunuch
-Plug 'tpope/vim-eunuch' 
+Plug 'tpope/vim-eunuch'
 
 "matchtagalways
 "Highlight open and close html tabs
@@ -66,7 +70,7 @@ Plug 'valloric/matchtagalways'
 Plug 'elixir-editors/vim-elixir' " Elixir
 
 "vim-closetag
-"Auto close (X)HTML tags 
+"Auto close (X)HTML tags
 "https://github.com/alvan/vim-closetag
 Plug 'alvan/vim-closetag'
 
@@ -76,14 +80,14 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 
 "vim-gitgutter
-"Plugin which shows git diff markers in the sign column  
+"Plugin which shows git diff markers in the sign column
 "https://github.com/airblade/vim-gitgutter
 Plug 'airblade/vim-gitgutter'
 
 "vim-fugitive
 "A Git wrapper so awesome
 "https://github.com/tpope/vim-fugitive
-Plug 'tpope/vim-fugitive' 
+Plug 'tpope/vim-fugitive'
 
 "indentLine
 "Display the indention levels with thin vertical lines
@@ -91,9 +95,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 
 "vim-multiple-cursors
-"True Sublime Text style multiple selections for Vim 
+"True Sublime Text style multiple selections for Vim
 "https://github.com/terryma/vim-multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
+
+"vim-better-whitespace
+"Better whitespace highlighting for Vim
+"https://github.com/ntpeters/vim-better-whitespace
+Plug 'ntpeters/vim-better-whitespace'
 
 "lightline
 "A light and configurable statusline/tabline plugin for Vim
@@ -121,7 +130,7 @@ map <C-h> :History<CR>
 "Fzf Ack + Ag
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor 
+  set grepprg=ag\ --nogroup\ --nocolor
 
   " Use Ag for Ack
   let g:ackprg = 'ag --vimgrep --smart-case'
@@ -178,4 +187,4 @@ endfunction
 
 "ayu-vim =======================================================
 let ayucolor="dark"       "Can be: light, mirage, dark
-colorscheme ayu       
+colorscheme ayu
