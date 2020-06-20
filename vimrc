@@ -10,7 +10,17 @@ set hlsearch                   "Highlight all search pattern matches
 set laststatus=2               "Always show statusbar
 set showmode                   "Always show which more are we in
 set termguicolors              "Enable true colors support
-set colorcolumn=120             "Ruler at a specific column
+set colorcolumn=120            "Ruler at a specific column
+set hidden                     "Keep buffer unsaved if navigate accross buffers
+set expandtab                  "To insert space characters whenever the tab key is pressed
+
+"Tab/shift-tab to indent/outdent in visual mode.
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+"Keep selection when indenting/outdenting.
+vnoremap > >gv
+vnoremap < <gv
 
 "No Backup
 set noswapfile
@@ -89,11 +99,6 @@ Plug 'airblade/vim-gitgutter'
 "https://github.com/tpope/vim-fugitive
 Plug 'tpope/vim-fugitive'
 
-"indentLine
-"Display the indention levels with thin vertical lines
-"https://github.com/Yggdroot/indentLine
-Plug 'Yggdroot/indentLine'
-
 "vim-multiple-cursors
 "True Sublime Text style multiple selections for Vim
 "https://github.com/terryma/vim-multiple-cursors
@@ -109,11 +114,36 @@ Plug 'ntpeters/vim-better-whitespace'
 "https://github.com/itchyny/lightline.vim
 Plug 'itchyny/lightline.vim'
 
+"auto-pairs
+"Vim plugin, insert or delete brackets, parens, quotes in pair.
+"https://github.com/jiangmiao/auto-pairs
+Plug 'jiangmiao/auto-pairs'
+
+"ultisnips
+"modern snippets for vim
+"https://github.com/honza/vim-snippets
+Plug 'SirVer/ultisnips'
+
+"vim-snippets
+"vim snippets for UltiSnips
+"https://github.com/honza/vim-snippets
+Plug 'honza/vim-snippets'
+
+"vim-prosession
+"https://github.com/dhruvasagar/vim-prosession
+"A VIM plugin to handle sessions like a pro.
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
+
 "## Themes ##
 
 "ayu-vim
 "https://github.com/ayu-theme/ayu-vim
 Plug 'ayu-theme/ayu-vim' " or other package manager
+
+"gruvbox
+"https://github.com/morhetz/gruvbox
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -159,19 +189,16 @@ let g:mta_filetypes = {
       \ 'eelixir': 1,
       \ }
 
-"indentLine ====================================================
-let g:indentLine_setColors = 0
-
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead', 'filename': 'LightlineFilename'
-      \ },
+      \ }
       \ }
 
 function! LightlineFilename()
@@ -185,6 +212,11 @@ endfunction
 
 "## Themes ##
 
-"ayu-vim =======================================================
-let ayucolor="dark"       "Can be: light, mirage, dark
-colorscheme ayu
+""ayu-vim =======================================================
+" let ayucolor="dark"       "Can be: light, mirage, dark
+" colorscheme ayu
+
+"gruvbox =======================================================
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
