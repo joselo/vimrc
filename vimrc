@@ -40,14 +40,8 @@ cnoremap w. write <c-r>=expand("%:h")<cr>/
 "Vimgrep ignore files
 set wildignore=*/node_modules/*,*/target/*,*/tmp/*,*/static/*
 
-"Explorer
-map <C-x> :Vexplore<CR>
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_list_hide= '.*\.swp$,.*\.git,.*\_build,.*\tmp'
+"Terminal
+map <C-t> :below terminal<CR>
 
 "PLUG-INS *********************************************************
 
@@ -135,6 +129,12 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 
+"nerdtree
+"https://github.com/preservim/nerdtree
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+
 "## Themes ##
 
 "ayu-vim
@@ -144,6 +144,10 @@ Plug 'ayu-theme/ayu-vim' " or other package manager
 "gruvbox
 "https://github.com/morhetz/gruvbox
 Plug 'morhetz/gruvbox'
+
+"papercolor-theme
+"https://github.com/NLKNguyen/papercolor-theme
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -191,7 +195,7 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -210,13 +214,38 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
+"nerdtree =================================================
+map <C-x> :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
+augroup nerdtreehidecwd
+	autocmd!
+	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
+augroup end
+
 "## Themes ##
 
-""ayu-vim =======================================================
+""ayu-vim ======================================================
 " let ayucolor="dark"       "Can be: light, mirage, dark
 " colorscheme ayu
 
 "gruvbox =======================================================
-set background=dark
-colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'
+" set background=dark
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark='hard'
+
+"PaperColor ====================================================
+set background=light
+colorscheme PaperColor
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+
