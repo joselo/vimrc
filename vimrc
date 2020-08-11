@@ -222,6 +222,8 @@ let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
 let g:NERDTreeDirArrowExpandable = "\u00a0"
 let g:NERDTreeDirArrowCollapsible = "\u00a0"
+let NERDTreeShowHidden = 0
+let NERDTreeIgnore = ['\.git$', '^_build$', '^deps$']
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
@@ -239,7 +241,7 @@ augroup end
 " let g:gruvbox_contrast_dark='hard'
 
 "PaperColor ====================================================
-set background=light
+set background=dark "light
 colorscheme PaperColor
 let g:PaperColor_Theme_Options = {
   \   'theme': {
