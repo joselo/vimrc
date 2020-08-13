@@ -76,11 +76,6 @@ Plug 'tpope/vim-eunuch'
 "https://github.com/Valloric/MatchTagAlways
 Plug 'valloric/matchtagalways'
 
-"vim-elixir
-"Elixir support for vim
-"https://github.com/elixir-editors/vim-elixir
-Plug 'elixir-editors/vim-elixir' " Elixir
-
 "vim-closetag
 "Auto close (X)HTML tags
 "https://github.com/alvan/vim-closetag
@@ -146,6 +141,16 @@ Plug 'ryanoasis/vim-devicons'
 "vim-autotag
 "https://github.com/craigemery/vim-autotag
 Plug 'craigemery/vim-autotag'
+
+"## Languages ##
+
+"General
+Plug 'vim-test/vim-test'
+
+"Elixir:
+"Elixir support for vim
+Plug 'elixir-editors/vim-elixir'
+
 
 "## Themes ##
 
