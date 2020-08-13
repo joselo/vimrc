@@ -14,6 +14,9 @@ set colorcolumn=120            "Ruler at a specific column
 set hidden                     "Keep buffer unsaved if navigate accross buffers
 set expandtab                  "To insert space characters whenever the tab key is pressed
 
+"leader key
+let mapleader = ","
+
 "Tab/shift-tab to indent/outdent in visual mode.
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
@@ -253,7 +256,12 @@ augroup end
 
 "vim-tests ===============================================
 let test#strategy = "vimterminal"
-let test#vim#term_position = "rightb vert"
+let test#vim#term_position = "rightb"
+nmap <leader>t  :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>ts :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
 
 
 "## Themes ##
