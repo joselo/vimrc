@@ -143,6 +143,10 @@ Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
+"vim-autotag
+"https://github.com/craigemery/vim-autotag
+Plug 'craigemery/vim-autotag'
+
 "## Themes ##
 
 "ayu-vim
@@ -164,7 +168,8 @@ Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 "fzf =============================================================
-let g:fzf_layout = { 'down': '~50%' }
+let g:fzf_preview_window = 'up:50%'
+let g:fzf_layout = { 'down': '~100%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
 
 map <C-p> :Files<CR>

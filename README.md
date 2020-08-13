@@ -5,6 +5,7 @@
 - https://github.com/junegunn/vim-plug
 - https://github.com/junegunn/fzf
 - https://github.com/ggreer/the_silver_searcher
+- https://github.com/universal-ctags/ctags
 
 ## If Powerline fonts do not works right, install the fonts:
 
