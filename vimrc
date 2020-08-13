@@ -251,6 +251,11 @@ augroup nerdtreehidecwd
 	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
 augroup end
 
+"vim-tests ===============================================
+let test#strategy = "vimterminal"
+let test#vim#term_position = "rightb vert"
+
+
 "## Themes ##
 
 ""ayu-vim ======================================================
