@@ -17,6 +17,9 @@ set expandtab                  "To insert space characters whenever the tab key 
 "leader key
 let mapleader = ","
 
+"Copy to clipboard
+vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
+
 "Tab/shift-tab to indent/outdent in visual mode.
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
@@ -144,6 +147,10 @@ Plug 'ryanoasis/vim-devicons'
 "vim-autotag
 "https://github.com/craigemery/vim-autotag
 Plug 'craigemery/vim-autotag'
+
+"vim-css-color
+"https://github.com/ap/vim-css-color
+Plug 'ap/vim-css-color'
 
 "## Languages ##
 
