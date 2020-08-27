@@ -156,10 +156,12 @@ Plug 'ap/vim-css-color'
 
 "General
 Plug 'vim-test/vim-test'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 "Elixir:
 "Elixir support for vim
 Plug 'elixir-editors/vim-elixir'
+Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 
 "## Themes ##
