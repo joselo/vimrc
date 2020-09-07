@@ -53,6 +53,7 @@ tnoremap <C-b> <C-w>:Buffers<CR>
 tnoremap <C-f> <C-w>:BLines<CR>
 tnoremap <C-g> <C-w>:Ag<CR>
 tnoremap <C-h> <C-w>:History<CR>
+tnoremap <C-x> <C-w>:NERDTreeToggle<CR>
 
 "Open path in a buffer
 nnoremap <C-W><C-S-F> <C-W>vgF
@@ -182,6 +183,10 @@ Plug 'NLKNguyen/papercolor-theme'
 "https://github.com/ghifarit53/tokyonight-vim/
 Plug 'ghifarit53/tokyonight-vim'
 
+"Rigellute/rigel
+"https://github.com/Rigellute/rigel
+Plug 'Rigellute/rigel'
+
 call plug#end()
 
 "fzf =============================================================
@@ -229,7 +234,7 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'rigel',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -285,20 +290,23 @@ nmap <leader>tv :TestVisit<CR>
 " let g:gruvbox_contrast_dark='hard'
 
 "PaperColor ====================================================
-set background=dark "light
-colorscheme PaperColor
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'transparent_background': 1
-  \     }
-  \   }
-  \ }
+" set background=dark "light
+" colorscheme PaperColor
+" let g:PaperColor_Theme_Options = {
+"   \   'theme': {
+"   \     'default': {
+"   \       'transparent_background': 1
+"   \     }
+"   \   }
+"   \ }
 
 "tokyonight-vim ================================================
 " let g:tokyonight_style = 'night' " available: night, storm
 " let g:tokyonight_enable_italic = 1
 " colorscheme tokyonight
+
+"rigel =========================================================
+colorscheme rigel
 
 "## CUSTOM ##
 
@@ -307,4 +315,5 @@ if &term == "alacritty"
   let &term = "xterm-256color"
   hi! Normal ctermbg=NONE guibg=NONE
   hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+  hi! Terminal ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 endif
