@@ -262,7 +262,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
 let g:NERDTreeDirArrowExpandable = "\u00a0"
 let g:NERDTreeDirArrowCollapsible = "\u00a0"
 let NERDTreeShowHidden = 0
-let NERDTreeIgnore = ['\.git$', '^_build$', '^deps$']
+let NERDTreeIgnore = ['\.git$', '^_build$', '^deps$', '^cover$']
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree setlocal conceallevel=3 | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
