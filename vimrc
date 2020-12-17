@@ -5,7 +5,8 @@ set number                     "Line Numbers
 set encoding=utf-8             "Always use unicode (god damnit, windows)
 set nocompatible               "Disable vi compatibility mode
 set autoindent                 "Autoindent always ON.
-set showmatch                  "Higlight matching parentheses and brackets
+set showmatch                  "Show matching brackets
+set nostartofline              "Leave my cursor where it was
 set hlsearch                   "Highlight all search pattern matches
 set laststatus=2               "Always show statusbar
 set showmode                   "Always show which more are we in
@@ -13,6 +14,9 @@ set termguicolors              "Enable true colors support
 set colorcolumn=120            "Ruler at a specific column
 set hidden                     "Keep buffer unsaved if navigate accross buffers
 set expandtab                  "To insert space characters whenever the tab key is pressed
+
+" Disable Highlight Matched Parentheses
+let g:loaded_matchparen=1
 
 "leader key
 let mapleader = ","
