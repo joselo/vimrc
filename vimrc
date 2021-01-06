@@ -191,6 +191,11 @@ Plug 'ghifarit53/tokyonight-vim'
 "https://github.com/Rigellute/rigel
 Plug 'Rigellute/rigel'
 
+"pineapplegiant/spaceduck
+"https://github.com/pineapplegiant/spaceduck
+Plug 'sheerun/vim-polyglot'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+
 call plug#end()
 
 "fzf =============================================================
@@ -238,7 +243,7 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'rigel',
+      \ 'colorscheme': 'spaceduck',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -310,7 +315,16 @@ nmap <leader>tv :TestVisit<CR>
 " colorscheme tokyonight
 
 "rigel =========================================================
-colorscheme rigel
+" colorscheme rigel
+
+"spaceduck =========================================================
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+colorscheme spaceduck
 
 "## CUSTOM ##
 
