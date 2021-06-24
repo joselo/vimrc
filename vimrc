@@ -157,6 +157,10 @@ Plug 'craigemery/vim-autotag'
 "https://github.com/ap/vim-css-color
 Plug 'ap/vim-css-color'
 
+"tagbar
+"https://github.com/preservim/tagbar
+Plug 'preservim/tagbar'
+
 "## Languages ##
 
 "General
@@ -199,8 +203,8 @@ Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 call plug#end()
 
 "fzf =============================================================
-let g:fzf_preview_window = 'up:50%'
-let g:fzf_layout = { 'down': '~100%' }
+let g:fzf_preview_window = ['up:50%', 'ctrl-/']
+let g:fzf_layout = { 'down': '~50%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
 
 map <C-p> :Files<CR>
@@ -286,6 +290,38 @@ nmap <leader>ts :TestSuite<CR>
 nmap <leader>tl :TestLast<CR>
 nmap <leader>tv :TestVisit<CR>
 
+
+"tagbar ==================================================
+nmap <F8> :TagbarToggle<CR>
+
+"Elixir
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'p:protocols',
+        \ 'm:modules',
+        \ 'e:exceptions',
+        \ 'y:types',
+        \ 'd:delegates',
+        \ 'f:functions',
+        \ 'c:callbacks',
+        \ 'a:macros',
+        \ 't:tests',
+        \ 'i:implementations',
+        \ 'o:operators',
+        \ 'r:records'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 'p' : 'protocol',
+        \ 'm' : 'module'
+    \ },
+    \ 'scope2kind' : {
+        \ 'protocol' : 'p',
+        \ 'module' : 'm'
+    \ },
+    \ 'sort' : 0
+\ }
 
 "## Themes ##
 
