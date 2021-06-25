@@ -170,7 +170,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 "Elixir:
 "Elixir support for vim
 Plug 'elixir-editors/vim-elixir'
-Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
+"Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 
 "## Themes ##
@@ -206,6 +206,8 @@ call plug#end()
 let g:fzf_preview_window = ['up:50%', 'ctrl-/']
 let g:fzf_layout = { 'down': '~50%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 map <C-p> :Files<CR>
 map <C-b> :Buffers<CR>
@@ -330,9 +332,11 @@ let g:tagbar_type_elixir = {
 " colorscheme ayu
 
 "gruvbox =======================================================
-set background=dark
-colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'
+function! GruvboxTheme()
+  set background=dark
+  colorscheme gruvbox
+  let g:gruvbox_contrast_dark='hard'
+endfunction
 
 "PaperColor ====================================================
 " set background=dark "light
@@ -361,6 +365,8 @@ let g:gruvbox_contrast_dark='hard'
 " endif
 
 " colorscheme spaceduck
+
+call GruvboxTheme()
 
 "## CUSTOM ##
 
