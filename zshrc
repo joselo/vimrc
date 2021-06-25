@@ -97,11 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# JAVA
-export JAVA_HOME=/opt/jdk-14.0.2
-
-# Local bins
-export PATH="$HOME/.local/bin:$PATH"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+export PATH=~/.local/bin:$PATH
+export PSQL_EDITOR=vim
