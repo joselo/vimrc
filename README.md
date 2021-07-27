@@ -8,3 +8,7 @@
 - [Ctags](https://github.com/universal-ctags/ctags)
 - [Rg](https://github.com/BurntSushi/ripgrep)
 - [Xclip](https://linux.die.net/man/1/xclip)
+
+## Prefered Fonts
+- [Iosevka](https://github.com/be5invis/Iosevka)
+
