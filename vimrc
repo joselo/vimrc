@@ -257,7 +257,6 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'falcon',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -348,7 +347,17 @@ let g:tagbar_type_elixir = {
 
 "falcon =======================================================
 function! FalconTheme()
-  set background=dark
+  " set background=dark
+  set termguicolors
+
+  let g:falcon_background = 0
+  let g:falcon_inactive = 1
+
+  colorscheme falcon
+
+  let g:falcon_lightline = 1
+  let g:lightline.colorscheme = 'falcon'
+
   colorscheme falcon
 endfunction
 
