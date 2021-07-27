@@ -204,6 +204,10 @@ Plug 'Rigellute/rigel'
 Plug 'sheerun/vim-polyglot'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
+"fenetikm/falcon
+"https://github.com/fenetikm/falcon
+Plug 'fenetikm/falcon'
+
 call plug#end()
 
 "fzf =============================================================
@@ -253,7 +257,7 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'falcon',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -336,10 +340,16 @@ let g:tagbar_type_elixir = {
 " colorscheme ayu
 
 "gruvbox =======================================================
-function! GruvboxTheme()
+" function! GruvboxTheme()
+"   set background=dark
+"   colorscheme gruvbox
+"   let g:gruvbox_contrast_dark='hard'
+" endfunction
+
+"falcon =======================================================
+function! FalconTheme()
   set background=dark
-  colorscheme gruvbox
-  let g:gruvbox_contrast_dark='hard'
+  colorscheme falcon
 endfunction
 
 "PaperColor ====================================================
@@ -370,7 +380,7 @@ endfunction
 
 " colorscheme spaceduck
 
-call GruvboxTheme()
+call FalconTheme()
 
 "## CUSTOM ##
 
