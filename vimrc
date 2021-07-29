@@ -339,11 +339,13 @@ let g:tagbar_type_elixir = {
 " colorscheme ayu
 
 "gruvbox =======================================================
-" function! GruvboxTheme()
-"   set background=dark
-"   colorscheme gruvbox
-"   let g:gruvbox_contrast_dark='hard'
-" endfunction
+function! GruvboxTheme()
+  set background=dark
+  " set background=light
+  colorscheme gruvbox
+  let g:gruvbox_contrast_dark='hard'
+  let g:lightline.colorscheme = 'gruvbox'
+endfunction
 
 "falcon =======================================================
 function! FalconTheme()
@@ -362,15 +364,20 @@ function! FalconTheme()
 endfunction
 
 "PaperColor ====================================================
-" set background=dark "light
-" colorscheme PaperColor
-" let g:PaperColor_Theme_Options = {
-"   \   'theme': {
-"   \     'default': {
-"   \       'transparent_background': 1
-"   \     }
-"   \   }
-"   \ }
+function! PaperColorTheme()
+  set background=dark
+  " set background=light
+  colorscheme PaperColor
+  let g:lightline.colorscheme = 'PaperColor'
+
+  let g:PaperColor_Theme_Options = {
+    \   'theme': {
+    \     'default': {
+    \       'transparent_background': 1
+    \     }
+    \   }
+    \ }
+endfunction
 
 "tokyonight-vim ================================================
 " let g:tokyonight_style = 'night' " available: night, storm
@@ -389,7 +396,9 @@ endfunction
 
 " colorscheme spaceduck
 
-call FalconTheme()
+" call FalconTheme()
+call GruvboxTheme()
+" call PaperColorTheme()
 
 "## CUSTOM ##
 
