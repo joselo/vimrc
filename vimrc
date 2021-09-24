@@ -105,7 +105,7 @@ Plug 'airblade/vim-gitgutter'
 "vim-fugitive
 "A Git wrapper so awesome
 "https://github.com/tpope/vim-fugitive
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive', { 'branch': 'release' }
 
 "vim-multiple-cursors
 "True Sublime Text style multiple selections for Vim
@@ -169,7 +169,7 @@ Plug 'tpope/vim-dadbod'
 
 "General
 Plug 'vim-test/vim-test'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 "Elixir:
 "Elixir support for vim
@@ -334,10 +334,6 @@ let g:tagbar_type_elixir = {
 
 "## Themes ##
 
-""ayu-vim ======================================================
-" let ayucolor="dark"       "Can be: light, mirage, dark
-" colorscheme ayu
-
 "gruvbox =======================================================
 function! GruvboxTheme()
   set background=dark
@@ -365,8 +361,8 @@ endfunction
 
 "PaperColor ====================================================
 function! PaperColorTheme()
-  set background=dark
-  " set background=light
+  " set background=dark
+  set background=light
   colorscheme PaperColor
   let g:lightline.colorscheme = 'PaperColor'
 
@@ -379,26 +375,9 @@ function! PaperColorTheme()
     \ }
 endfunction
 
-"tokyonight-vim ================================================
-" let g:tokyonight_style = 'night' " available: night, storm
-" let g:tokyonight_enable_italic = 1
-" colorscheme tokyonight
-
-"rigel =========================================================
-" colorscheme rigel
-
-"spaceduck ======================================================
-" if exists('+termguicolors')
-"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"   set termguicolors
-" endif
-
-" colorscheme spaceduck
-
 " call FalconTheme()
-call GruvboxTheme()
-" call PaperColorTheme()
+" call GruvboxTheme()
+call PaperColorTheme()
 
 "## CUSTOM ##
 

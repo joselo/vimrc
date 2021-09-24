@@ -343,15 +343,17 @@ function! GruvboxTheme()
 endfunction
 
 "PaperColor ====================================================
-" set background=dark "light
-" colorscheme PaperColor
-" let g:PaperColor_Theme_Options = {
-"   \   'theme': {
-"   \     'default': {
-"   \       'transparent_background': 1
-"   \     }
-"   \   }
-"   \ }
+function! PaperColorTheme()
+  set background=light "dark
+  colorscheme PaperColor
+  let g:PaperColor_Theme_Options = {
+    \   'theme': {
+    \     'default': {
+    \       'transparent_background': 1
+    \     }
+    \   }
+    \ }
+endfunction
 
 "tokyonight-vim ================================================
 " let g:tokyonight_style = 'night' " available: night, storm
@@ -370,7 +372,8 @@ endfunction
 
 " colorscheme spaceduck
 
-call GruvboxTheme()
+" call GruvboxTheme()
+call PaperColorTheme
 
 "## CUSTOM ##
 
