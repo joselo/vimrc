@@ -211,7 +211,7 @@ Plug 'fenetikm/falcon'
 call plug#end()
 
 "fzf =============================================================
-let g:fzf_preview_window = ['up:50%', 'ctrl-/']
+" let g:fzf_preview_window = ['up:50%', 'ctrl-/']
 let g:fzf_layout = { 'down': '~50%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
 
@@ -373,6 +373,8 @@ function! PaperColorTheme()
     \     }
     \   }
     \ }
+
+  let $BAT_THEME='base16-256'
 endfunction
 
 " call FalconTheme()
