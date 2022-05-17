@@ -378,8 +378,8 @@ function! PaperColorTheme()
 endfunction
 
 " call FalconTheme()
-" call GruvboxTheme()
-call PaperColorTheme()
+call GruvboxTheme()
+" call PaperColorTheme()
 
 "## CUSTOM ##
 
