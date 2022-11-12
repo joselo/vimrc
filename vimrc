@@ -208,6 +208,10 @@ Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 "https://github.com/fenetikm/falcon
 Plug 'fenetikm/falcon'
 
+"whatyouhide/vim-gotham
+"https://github.com/whatyouhide/vim-gotham
+Plug 'whatyouhide/vim-gotham'
+
 call plug#end()
 
 "fzf =============================================================
@@ -257,6 +261,7 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
+      \ 'colorscheme': 'gotham',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -377,9 +382,20 @@ function! PaperColorTheme()
   let $BAT_THEME='base16-256'
 endfunction
 
+"GothamTheme =======================================================
+function! GothamTheme()
+  " set background=dark
+  " set background=light
+  colorscheme gotham
+  " let g:gruvbox_contrast_dark='hard'
+  " let g:lightline.colorscheme = 'gruvbox'
+endfunction
+
 " call FalconTheme()
-call GruvboxTheme()
+" call GruvboxTheme()
 " call PaperColorTheme()
+
+call GothamTheme()
 
 "## CUSTOM ##
 
