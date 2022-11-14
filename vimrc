@@ -261,7 +261,7 @@ let g:mta_filetypes = {
 
 "lightline =================================================
 let g:lightline = {
-      \ 'colorscheme': 'gotham',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -392,10 +392,9 @@ function! GothamTheme()
 endfunction
 
 " call FalconTheme()
-" call GruvboxTheme()
+call GruvboxTheme()
 " call PaperColorTheme()
-
-call GothamTheme()
+" call GothamTheme()
 
 "## CUSTOM ##
 

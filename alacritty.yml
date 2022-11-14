@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  startup_mode: Fullscreen
 
   # Window title
   #title: Alacritty
@@ -329,8 +329,8 @@ schemes:
         white: '0xd3ebe9'
 
 # Apply the color scheme.
-colors:  *gotham
-colors:  *gotham
+# colors:  *gotham
+colors: *gruvbox_material_hard_dark
 
 # Bell
 #
@@ -378,7 +378,7 @@ colors:  *gotham
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 window:
-  opacity: 0.95
+  opacity: 1
 
 selection:
   # This string contains all characters that are used as separators for "semantic words" in Alacritty.
