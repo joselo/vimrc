@@ -174,7 +174,7 @@ Plug 'vim-test/vim-test'
 "Elixir:
 "Elixir support for vim
 Plug 'elixir-editors/vim-elixir'
-"Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
+Plug 'sheerun/vim-polyglot' "Elixir support for vim (HEEX extensions)
 
 
 "## Themes ##
@@ -405,3 +405,10 @@ if &term == "alacritty"
   hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
   hi! Terminal ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 endif
+
+"vim-elixir
+
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewFile mix.lock set filetype=elixir
+
