@@ -341,10 +341,10 @@ let g:tagbar_type_elixir = {
 
 "gruvbox =======================================================
 function! GruvboxTheme()
-  set background=dark
-  " set background=light
+  " set background=dark
+  set background=light
   colorscheme gruvbox
-  let g:gruvbox_contrast_dark='hard'
+  let g:gruvbox_contrast_dark='soft'
   let g:lightline.colorscheme = 'gruvbox'
 endfunction
 
@@ -367,7 +367,7 @@ endfunction
 "PaperColor ====================================================
 function! PaperColorTheme()
   " set background=dark
-  set background=light
+  "set background=light
   colorscheme PaperColor
   let g:lightline.colorscheme = 'PaperColor'
 
@@ -392,8 +392,8 @@ function! GothamTheme()
 endfunction
 
 " call FalconTheme()
-call GruvboxTheme()
-" call PaperColorTheme()
+" call GruvboxTheme()
+call PaperColorTheme()
 " call GothamTheme()
 
 "## CUSTOM ##
